@@ -62,6 +62,41 @@ Course : any;
         });
 
 }
+
+reload() {
+  
+    return new Promise(resolve => {
+    this.storage.get('password').then((password) => {
+    this.pw = password;   
+    this.storage.get('email').then((email) => {
+    this.email = email;
+    
+    console.log(this.email);
+    this.http.get('http://golf-rollup.co.uk/society/AppSignin.php?email='+this.email+'&password='+this.pw, "")
+    	.map(res => res.json())
+        .subscribe(res => {
+        this.res = (res);
+         this.storage.set('society', this.res).then(() => {
+         }); 
+       //resolve(this.res);
+     
+    this.http.get('http://golf-rollup.co.uk/society/AppSocPlayer.php?Club='+this.res, "")
+    	.map(res => res.json())
+		.subscribe(data1 => {
+		this.data1 = data1;
+		resolve(this.data1);
+	console.log(this.data1);
+ 	 });
+  
+	});
+     });
+     	});
+        });
+
+}
+
+
+
 loadCs() {
     
 if (this.datad) {

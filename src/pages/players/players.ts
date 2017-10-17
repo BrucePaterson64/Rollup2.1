@@ -34,6 +34,19 @@ export class PlayersPage {
 	      }
           
           
+doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    
+   this.dataService.reload()
+      .then(data1 => {
+      this.player = data1;
+    });
+    
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
 
   
   
