@@ -32,7 +32,11 @@ export class PlayersPage {
     
 		});
 	      }
+          
+          
 
+  
+  
      loadPlayers(){
      this.dataService.load()
       .then(data1 => {
