@@ -12,9 +12,9 @@ import { Component, ViewChild } from '@angular/core';
 export class AddPlayerPage {
 public name;
   society : any;
-  selected = {Hcp:'', name : '', Society : ''}
+  selected = {Hcp:'', Player : '', Club : ''}
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http : Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
 
   this.http.get('http://golf-rollup.co.uk/society/societies.php', "")
    .map(response => response.json())
@@ -25,6 +25,15 @@ public name;
    });
 
   }
+addPlayer(selected){
+ this.http.get('http://golf-rollup.co.uk/society/appAddPlayer.php?Player='+selected.Player+'&Club='+selected.Club+'&Hcp='+selected.Hcp, "")
+   .map(response => response.json())
+    .subscribe(data => {
+      
+   });
+
+}
+
 
 newSociety() {
 	

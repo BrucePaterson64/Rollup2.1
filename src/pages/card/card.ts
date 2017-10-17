@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
-//import { AuthService } from '../../providers/auth-service/auth-service';
 import {Http, Headers} from '@angular/http';
 import {DataServiceProvider} from '../../providers/data-service/data-service';
 import {CoursesPage} from '../courses/courses';
@@ -19,11 +18,11 @@ export class CardPage {
   public name;
   public Course : any;
   public player: any;
-	public course;
-	email : string;
-	society : string;
-	password : string;
- 	data : any;
+  public course;
+  email : string;
+  society : string;
+  password : string;
+  data : any;
   selectedPlayer : string;
   selectedHcp : any;
   selectedScore: any;
@@ -34,7 +33,7 @@ export class CardPage {
   pw : any;
   res: any;
   Hcp : any;
-	hcp : any;
+  hcp : any;
   H : any;
   Hh : any;
   hh : any;
@@ -50,23 +49,20 @@ export class CardPage {
   constructor( public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public http: Http, public dataService: DataServiceProvider, public toastCtrl: ToastController,public alertCtrl: AlertController) {
 
 
-  var d = new Date();
-  this.n = d.toLocaleDateString('en-GB');
+    var d = new Date();
+    this.n = d.toLocaleDateString('en-GB');
 	 
-  this.name = navParams.get("name");
-  this.storage.set('course', this.name).then(() => {
+    this.name = navParams.get("name");
+    this.storage.set('course', this.name).then(() => {
   
-  this.loadC();
- 
-  
-      });
+    this.loadC();
+    });
       
-
     this.loadPlayers();
     
     this.storage.get('society').then((society) => {
     this.society = society;
-    console.log(society);
+   
        })
   	this.storage.get('password').then((password) => {
     this.pw = password;
@@ -75,11 +71,8 @@ export class CardPage {
     this.storage.get('email').then((email) => {
     this.email = email;
 		});
-    
-    
-     
-    
-	      }
+       }
+       
   onSelect1() {
 
   document.getElementById('sel1').style.cssText = 'background:#ffffff; color: #ff0000;';
@@ -115,8 +108,6 @@ export class CardPage {
  
 
  this.showAlert();
- 
- 
 }
 
 showAlert() {
@@ -232,10 +223,7 @@ getPoints = function (par) {
 
 onChangeScore(selection) {
 
-console.log(selection);
 }
-
-
 
 submitResult() {
 
@@ -320,19 +308,6 @@ if(nPoints > 36 && (parseFloat(nHcp) > 20.4) && shots > K)
   var RrevHcp = Math.round( revHcp * 10 ) / 10;
          }
 
-
-
-   // var args1 = {
-    //Club: this.society,
-    //Day: this.storedDay,
-   // Time: this.storedTime,
-   // Player: this.selectedPlayer,
-   // yrwk: newDate,
-   // Pts: this.totPts,
-   // Hcp: this.selectedHcp,
-   // RevHcp: RrevHcp
-
-   // };
   if (this.selectedPlayer == null) {
        let alert = this.alertCtrl.create({
         title: 'ERROR',
@@ -348,65 +323,28 @@ if(nPoints > 36 && (parseFloat(nHcp) > 20.4) && shots > K)
         buttons: [ {
           text: 'Dismiss',
           handler: () => {
-            console.log('Disagree clicked');
+         
           }
         },
         {
           text: 'Continue',
           handler: () => {
-          
-            console.log('Agree clicked');
-            console.log(RrevHcp);
-             this.http.get ('http://golf-rollup.co.uk/society/aAppSubmitScores.php?Club='+ this.society + '&Player='+ this.selectedPlayer +'&Pts='+ this.totPts +'&Hcp='+ this.selectedHcp +'&RevHcp='+ RrevHcp,"")
-             .subscribe(res => {
-                this.navCtrl.push(ResultsPage, {society: this.society});
+          this.http.get ('http://golf-rollup.co.uk/society/aAppSubmitScores.php?Club='+ this.society + '&Player='+ this.selectedPlayer +'&Pts='+ this.totPts +'&Hcp='+ this.selectedHcp +'&RevHcp='+ RrevHcp,"")
+          .subscribe(res => {
+          this.navCtrl.push(ResultsPage, {society: this.society});
                 })
-                
-
-          }
+            }
         }]
    });
     alert.present();
-  console.log(this.n);
-  }
-
  
-     //confirmPopup.then(function(res) {
-    //   if(res) {
-   // this.http.get ('http://golf-rollup.co.uk/society/aAppSubmitScores.php',"")
-    
-    //params: {
-    //'Club': this.society,
-    //'Player': this.selectedPlayer,
-    //'Pts': this.totPts,
-    //'Hcp': this.selectedHcp,
-    //'RevHcp': RrevHcp,
-    //  'adjHcp':  }
-  //.map(res => res.json())
-   //.subscribe(res => {
-
-  // })
-
-
-
-     //} else {
-     //  alert ("Action Cancelled");
-     //  }
-      // })
-     // }
-    
-
-
-
+  }
 }
 ionViewDidLoad()
 
       { 
-
-      this.items = ['1','2','3','4','5','6','7','8','9','10','11','12'];
-
-    console.log('ionViewDidLoad CardPage');
-      
+  this.items = ['1','2','3','4','5','6','7','8','9','10','11','12'];
+console.log('ionViewDidLoad CardPage');
   }  
 }
 

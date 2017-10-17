@@ -12,12 +12,12 @@
 <div align="center"><h3> Add Player to Society </h3></div>
 <br>
 <table width="100%">
-	<tr><td >Name:</td><td colspan="2" ><input style="color:red; " type="text" [(ngModel)]="selected.name" name="name" placeholder="Insert Name"></td></tr>
+	<tr><td >Name:</td><td colspan="2" ><input style="color:red; " type="text" [(ngModel)]="selected.Player" name="name" placeholder="Insert Name"></td></tr>
 	<tr><td >Handicap:</td><td colspan="2"><input style="color:red; " type="text" [(ngModel)]="selected.Hcp" name="hcp" placeholder="Insert Handicap"></td></tr>
-	<tr><td>Society:</td><td ><select style="color:Black; width:100%" [(ngModel)]="selected.society"><option  *ngFor ="let s of society">{{s.Society}}</option> </select></td><td align="center"><label><ion-icon item-end name="add-circle" (click)="newSociety()"></ion-icon></label></td></tr>
+	<tr><td>Society:</td><td ><select style="color:Black; width:100%" [(ngModel)]="selected.Club" ><option  *ngFor ="let s of society" value="{{s.Society}}">{{s.Society}}</option> </select></td><td align="center"><label><ion-icon item-end name="add-circle" (click)="newSociety()"></ion-icon></label></td></tr>
 
 
 					</table>
 <br>
- <button ion-button full (click)="addPlayer(data)">Submit Player</button>
+ <button ion-button full (click)="addPlayer(selected)">Submit Player</button>
 </ion-content>
