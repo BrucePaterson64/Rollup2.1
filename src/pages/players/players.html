@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Players</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content class="home">
+<button ion-button full color="primary" (click)="addPlayer(person)">Add a new Player</button>
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let person of player" >
+    <ion-item>{{person.Player}} - Hcp: {{person.Hcp}}<ion-icon name="arrow-back" item-right></ion-icon></ion-item>
+     <ion-item-options>
+      <button ion-button color="primary" (click)="editPlayer(person)">Edit</button>
+      <button ion-button color="danger" (click)="removePlayer(person)">Delete</button>
+    </ion-item-options>
+  </ion-item-sliding>
+   </ion-list>
+</ion-content>

@@ -1,0 +1,23 @@
+ <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Delete Player</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div align="center">   <h3>Deleting Player....</h3> </div><br>
+<div align="center">
+    <table width="100%">
+        <tr><td width="40%">Name:</td><td width="60%">{{name.Player}}</td></tr>
+        <tr><td>Society:</td><td>{{name.Society}}</td></tr>
+        <tr><td>Handicap:</td><td>{{name.Hcp}}</td></tr>
+    </table>
+    <br>
+     <button ion-button full (click)="delPlayer(data)">Continue to DELETE</button>
+</div>
+
+</ion-content>

@@ -1,0 +1,20 @@
+ <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add a Society</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<div align="center"><h3> Add a Society </h3></div>
+<br>
+<table width="100%">
+	<tr><td >Society:</td><td colspan="2" ><input style="color:red; " type="text" [(ngModel)]="selected.Society" name="society" placeholder="Insert Society Name"></td></tr>
+	<tr><td >Town:</td><td colspan="2"><input style="color:red; " type="text" [(ngModel)]="selected.Town" name="town" placeholder="Insert Town"></td></tr>
+</table>
+<br>
+ <button ion-button full (click)="addSociety()">Submit Society</button>
+</ion-content>

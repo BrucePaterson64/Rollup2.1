@@ -1,0 +1,110 @@
+page-card {
+.input-labl {
+
+font-size:16px;
+}
+table td {
+  display: table-cell;
+  vertical-align: bottom;
+}
+    h2 {
+font-size:30px;
+    }
+    h3 {
+font-size:22px;
+color:yellow;
+    }
+    .header .col {
+    background-color:lightgrey;
+    text-align:center;
+    width: 16.6%;
+	padding: 3px;
+
+}
+.header .col1 {
+    background-color:lightcoral;
+    text-align:center;
+    width: 16.6%;
+    padding: 3px;
+
+}
+.header .col2 {
+     background-color:lightgreen;
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+    width: 16.6%;
+    text-align:center;
+	padding:3px;
+}
+.header .col3 {
+   background-color:yellow;
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+    width: 16.6%;
+    text-align:center;
+	padding:3px;
+}
+.header .col4 {
+   background-color:#fff;
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+    width: 16.7%;
+    text-align:center;
+	padding:15px 5px 5px 5px;
+}
+.header .col5 {
+   background-color:#fff;
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+    width: 16.7%;
+    text-align:center;
+    padding:3px 5px 5px 5px;
+    vertical-align: bottom;
+}
+.col {
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+    width: 16.6%;
+    text-align:center;
+	background-color:white;
+	padding: 2px;
+}
+.col1 {
+    background-color:lightcoral;
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+    width: 16.6%;
+    text-align:center;
+	padding: 2px;
+
+}
+.col2 {
+    background-color:lightgreen;
+    border: solid 1px grey;
+    border-right-style: none;
+    width: 16.6%;
+    text-align:center;
+	padding: 2px;
+}
+.col3 {
+    background-color:yellow;
+    border: solid 1px grey;
+    border-bottom-style: none;
+    border-right-style: none;
+    width: 16.6%;
+    text-align:center;
+    border-right: solid 1px grey;
+    padding-bottom: 1px;
+}
+ .maxwidth
+{
+    max-width:100%;
+}
+
+}

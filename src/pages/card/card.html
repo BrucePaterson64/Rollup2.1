@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Score Card</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content class="home">
+
+  <ion-list>
+
+  </ion-list>
+
+
+<div align="center" style="height:30px"><h3>{{name.Course}}</h3></div>
+<div layout-align='center center'layout='coloumn' >
+<table style="width:100%">
+
+    <tr class="row header" style="height:50px">
+      <td class="col4" rowspan="2" style="width:20%" valign="center">Player:</td>
+      <td class="col4" rowspan="2" style="width:40%" valign="center"> <select class="maxwidth"  [(ngModel)]="selectedPlayer" (ngModelChange)="onChange(selectedPlayer)" ><option  *ngFor="let person of player" value="{{person.Player}}" >{{person.Player}}</option></select></td>
+
+      <td class="col5" style="width:20%"><table><tr ><td id="sel11" align="right">Hcp:</td></tr><tr><td  id="sel22">Rev Hcp:</td></tr></table> </td>
+      <td class="col5" style="width:20%" ><table><tr><td><select class="text-center" id="sel1" (ngModelChange)="onSelect1()"  font-size="10" [(ngModel)]="selectedHcp"><option  *ngFor="let h of H"  value="{{h.Hcp}}" >{{h.Hcp}}</option></select></td></tr><tr><td><select class="text-center" id="sel2" (ngModelChange)="onSelect2()"  font-size="10" [(ngModel)]="selectedHcp"><option  *ngFor="let rh of H"  value="{{rh.RevHcp}}" >{{rh.RevHcp}}</option></select></td></tr></table> </td>
+    </tr>
+
+
+
+         <tr class="row header">
+           <td class="col">Hole</td>
+           <td class="col1">Index</td>
+           <td class="col">Par</td>
+           <td class="col2">Points</td>
+           <td class="col">Shots</td>
+           <td class="col3">Score</td>
+         </tr>
+         <tr class="row header" *ngFor = "let par of Course; let i=index" >
+           <td class="col">{{i +1}}</td>
+           <td class="col1">{{par.Index}}</td>
+           <td class="col">{{par.Par}}</td>
+           <td class="col2">{{getPoints(par)}}</td>
+           <td class="col">{{getShots(par)}}</td>
+           <td class="col3" ><select [(ngModel)]="par.sel" (change)="onChangeScore(par.sel)"><option  *ngFor= "let s of items" >{{s}}</option></select></td>
+         </tr>
+
+        <tr class="row" style="height:32px">
+           <td class="col">Total</td>
+           <td class="col"></td>
+           <td class="col">{{getPar()}}</td>
+            <td class="col">{{getTotal()}}</td>
+           <td class="col">{{getTotalShots()}}</td>
+           <td class="col">{{getScoreTotal()}}</td>
+        </tr>
+
+
+</table>
+  <div>
+   <button ion-button color="primary" full (click)="submitResult()">Submit Result</button>
+  </div>
+</div>
+
+
+
+
+</ion-content>

@@ -1,0 +1,159 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<div align="right"><ion-icon class="icon" name="information-circle" (click)="showAlert();" style="zoom:2.0;" ></ion-icon>
+        </div>
+    <br>
+
+    <div style="color:white; font-size:16px">{{set.society}} Tour - <select [(ngModel)]="set.year" style="color:black; width:100px" ><option *ngFor = "let y of years" value={{y}}>{{y}}</option></select></div>
+    <br>
+  <table style="width:100%">
+
+     <tr >
+
+    <td style="width:150px; padding:10px">Adjust Handicaps:</td>
+           <td>
+    <ion-segment [(ngModel)]="set.adjHcp" color="primary">
+    <ion-segment-button value="yes">
+     YES
+    </ion-segment-button>
+    <ion-segment-button value="no">
+     NO
+    </ion-segment-button>
+    </ion-segment>
+
+    </td>
+    </tr>
+    <tr>
+    <td style="width:150px; padding:10px">Penalty Shots:</td>
+    <td >
+
+    <ion-segment [(ngModel)]="set.shots" color="danger">
+    <ion-segment-button value="0">
+
+      0
+    </ion-segment-button>
+    <ion-segment-button value="1">
+      1
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      2
+    </ion-segment-button>
+         <ion-segment-button value="3">
+      3
+    </ion-segment-button>
+         <ion-segment-button value="4">
+      4
+    </ion-segment-button>
+    </ion-segment>
+
+    </td>
+    </tr>
+      <tr>
+    <td style="width:150px; padding:10px">No. of Courses to Play:</td>
+    <td >
+    <ion-segment [(ngModel)]="NoOfCourses" color="dark">
+    <ion-segment-button value="1">
+      1
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      2
+    </ion-segment-button>
+    <ion-segment-button value="3">
+      3
+    </ion-segment-button>
+         <ion-segment-button value="4">
+      4
+    </ion-segment-button>
+         <ion-segment-button value="5">
+      5
+    </ion-segment-button>
+         <ion-segment-button value="6">
+      6
+    </ion-segment-button>
+    </ion-segment>
+    </td>
+    </tr>
+    </table>
+   <br>
+    <div *ngIf="NoOfCourses=='6'">
+    <table style="width:100%">
+        <tr><td style="width:30%">Course 1:</td>
+        <td style="width:70%"><select  [(ngModel)]="set.selectedClub1" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 2:</td><td > <select  [(ngModel)]="set.selectedClub2" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 3:</td><td><select  [(ngModel)]="set.selectedClub3" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 4:</td><td><select  [(ngModel)]="set.selectedClub4" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 5:</td><td><select  [(ngModel)]="set.selectedClub5" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 6:</td><td><select  [(ngModel)]="set.selectedClub6" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+    </table>
+    <br>
+     <div align="center"><button ion-button color="primary" (click)="subSettings();"> Submit Settings</button></div>
+         <div align="center"><button ion-button color="secondary"> Add a Course</button></div>
+    </div>
+    <div *ngIf="NoOfCourses=='5'">
+    <table style="width:100%">
+        <tr><td style="width:30%">Course 1:</td>
+        <td style="width:70%"><select  [(ngModel)]="set.selectedClub1" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 2:</td><td > <select  [(ngModel)]="set.selectedClub2" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 3:</td><td><select  [(ngModel)]="set.selectedClub3" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 4:</td><td><select  [(ngModel)]="set.selectedClub4" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 5:</td><td><select  [(ngModel)]="set.selectedClub5" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+
+    </table>
+    <br>
+     <div align="center"><button ion-button color="primary" (click)="subSettings();"> Submit Settings</button></div>
+         <div align="center"><button ion-button color="secondary"> Add a Course</button></div>
+    </div>
+    <div *ngIf="NoOfCourses=='4'">
+    <table style="width:100%">
+        <tr><td style="width:30%">Course 1:</td>
+        <td style="width:70%"><select  [(ngModel)]="set.selectedClub1" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 2:</td><td > <select  [(ngModel)]="set.selectedClub2" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 3:</td><td><select  [(ngModel)]="set.selectedClub3" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 4:</td><td><select  [(ngModel)]="set.selectedClub4" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        </table><br>
+        <div align="center"><button ion-button color="primary" (click)="subSettings();"> Submit Settings</button></div>
+         <div align="center"><button ion-button color="secondary"> Add a Course</button></div>
+    </div>
+    <div *ngIf="NoOfCourses=='3'">
+    <table style="width:100%">
+        <tr><td style="width:30%">Course 1:</td>
+        <td style="width:70%"><select  [(ngModel)]="set.selectedClub1" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 2:</td><td > <select  [(ngModel)]="set.selectedClub2" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 3:</td><td><select  [(ngModel)]="set.selectedClub3" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+
+    </table><br>
+    	 <div align="center"><button ion-button color="primary" (click)="subSettings();"> Submit Settings</button></div>
+         <div align="center"><button ion-button color="secondary"> Add a Course</button></div>
+    </div>
+    <div *ngIf="NoOfCourses=='2'">
+    <table style="width:100%">
+        <tr><td style="width:30%">Course 1:</td>
+        <td style="width:70%"><select  [(ngModel)]="set.selectedClub1" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+        <tr><td>Course 2:</td><td > <select  [(ngModel)]="set.selectedClub2" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+
+    </table><br>
+    	<div align="center"><button ion-button color="primary" (click)="subSettings();"> Submit Settings</button></div>
+        <div align="center"><button ion-button color="secondary"> Add a Course</button></div>
+    </div>
+    <div *ngIf="NoOfCourses=='1'">
+    <table style="width:100%">
+       <tr><td style="width:30%">Course 1:</td>
+        <td style="width:70%"><select  [(ngModel)]="set.selectedClub1" ><option  *ngFor="let c of course" value="{{c.Club}}">{{c.Club}}</option></select></td></tr>
+
+    </table><br>
+    <div align="center"><button ion-button color="primary" (click)="subSettings();"> Submit Settings</button></div>
+         <div align="center"><button ion-button color="secondary"> Add a Course</button></div>
+    </div>
+
+</ion-content>
+
+
