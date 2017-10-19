@@ -23,28 +23,24 @@ import { HomePage } from '../pages/home/home';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AuthService } from '../providers/auth-service/auth-service';
-//import { NavController } from 'ionic-angular';
 import { MyApp } from './app.component';
 import {IonicStorageModule} from '@ionic/storage';
 import { DataServiceProvider } from '../providers/data-service/data-service';
 import { AddSocietyPage } from '../pages/add-society/add-society';
 import { ResultsServiceProvider } from '../providers/results-service/results-service';
 import { CalcServiceProvider } from '../providers/calc-service/calc-service';
-//import { ModalPage } from '../pages/modal/modal';
 import {LeaderPage} from '../pages/leader/leader';
+import { Geolocation } from '@ionic-native/geolocation';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    //CardPage,
-    //CoursesPage,
     PlayersPage,
     ResultsPage,
     GpsPage,
     ListPage,
     LoginPage,
-   // HomePage,
     RegistrationPage,
     DelPlayerPage,
     EditPlayerPage,
@@ -52,8 +48,8 @@ import {LeaderPage} from '../pages/leader/leader';
     AddPlayerPage,
     AddSocietyPage,
     LeaderPage
-   // ModalPage
-  ],
+     ],
+     
   imports: [
     BrowserModule,
     HttpModule,
@@ -62,6 +58,7 @@ import {LeaderPage} from '../pages/leader/leader';
     CardPageModule,
     CoursesPageModule,
     OrderModule,
+    
     IonicStorageModule.forRoot()
    
 
@@ -84,17 +81,19 @@ import {LeaderPage} from '../pages/leader/leader';
     AddPlayerPage,
     AddSocietyPage,
     LeaderPage
-    //ModalPage
-
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,   
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
     DataServiceProvider,
     ResultsServiceProvider,
     CalcServiceProvider
+    
+
   ]
 
 })

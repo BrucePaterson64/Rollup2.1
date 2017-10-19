@@ -13,7 +13,11 @@ import {LeaderPage} from '../leader/leader';
 export class ResultsPage {
 society: any;
 S: any;
-
+win1:any;
+winner1:any;
+win2:any;
+winner2:any;
+rd1:any;
 selNoOfCourses: any;
 
 constructor(public navParams: NavParams, public http: Http, public storage: Storage, public nav: NavController) {
@@ -31,7 +35,21 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
 	.map(data => data.json())
     .subscribe(data => {
     this.S = (data);
-
+    
+    this.http.get('http://golf-rollup.co.uk/society/socWinners.php?Club=' + this.society,"")
+	.map(res => res.json())
+    .subscribe(data => {
+    this.win1 = data[0];
+    this.winner1 = this.win1.Rd1;
+    this.win2 = data[1];
+    this.winner2 = this.win2.Rd2;
+    
+    console.log(data);
+    console.log(this.winner1);
+    console.log(this.winner2);
+    
+    
+    
     this.http.get('http://golf-rollup.co.uk/society/noOfCourses.php?Club=' + this.society,"")
     .map(data => data.json())
     .subscribe(data => {
@@ -41,6 +59,10 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
     })
    })
    })
+   })
+   
+ 
+   
   }
   
   public leaderBoard() {

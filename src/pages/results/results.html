@@ -58,7 +58,7 @@ table.weeks tr:nth-child(even) {
             </tr>
             <tr *ngFor="let score of S | orderBy: 'Player':false">
                 <td style="text-align:left">{{score.Player}}</td>
-                <td>{{score.Rd1}}</td>
+                <td >{{score.Rd1}}</td>
                 <td>{{score.Rd2}}</td>
 
 
@@ -77,9 +77,9 @@ table.weeks tr:nth-child(even) {
             </tr>
             <tr *ngFor="let score of S | orderBy: 'Player':false ">
                 <td style="text-align:left">{{score.Player}}</td>
-                <td>{{score.Rd1}}</td>
-                <td>{{score.Rd2}}</td>
-                <td>{{score.Rd3}}</td>
+                <td style='color:red;font-weight:bold'>{{score.Rd1}}</td>
+                <td style='" . $ww2 . "'>{{score.Rd2}}</td>
+                <td style='" . $ww3 . "'>{{score.Rd3}}</td>
 
 
             </tr>
