@@ -4,7 +4,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 
 declare var google;
 declare var addLabel;
-declare var clearLabels;
+declare var clearLabels: any;
 
 @Component({
   selector: 'gps-page',

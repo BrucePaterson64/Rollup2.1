@@ -5,7 +5,7 @@ import {DataServiceProvider} from '../../providers/data-service/data-service';
 import {Storage} from '@ionic/storage';
 import { Http } from '@angular/http';
 import { AuthService } from '../../providers/auth-service/auth-service';
-
+import { CoursesPage } from '../courses/courses';
 @IonicPage()
 @Component({
   selector: 'page-socsettings',
@@ -64,7 +64,7 @@ console.log(this.course);
     console.log(this.set);
       if (allowed) {
 
-       this.navCtrl.setRoot('CardPage');
+       this.navCtrl.setRoot('CoursesPage');
       } else {
       
       }

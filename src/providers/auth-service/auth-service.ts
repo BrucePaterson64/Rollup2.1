@@ -58,7 +58,7 @@ export class AuthService {
           });
         
            
-       nav.setRoot(CoursesPage);
+        nav.setRoot(CoursesPage);
       } else {
 
       alert("No records found! Please Register");
@@ -102,7 +102,7 @@ export class AuthService {
        this.storage.set('name', credentials.name).then(() => {
        this.storage.set('society', credentials.society).then(() => {
           
-      nav.setRoot(CardPage);
+      nav.setRoot(CoursesPage);
           }); 
         });
        
@@ -130,7 +130,7 @@ let nav = this.app.getActiveNav();
         this.storage.set('name', credentials.name).then(() => {
         this.storage.set('society', credentials.society).then(() => {
           
-      nav.setRoot(CardPage);
+      nav.setRoot(CoursesPage);
           }); 
         });
     }, (err) => {

@@ -39,10 +39,10 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
     this.http.get('http://golf-rollup.co.uk/society/socWinners.php?Club=' + this.society,"")
 	.map(res => res.json())
     .subscribe(data => {
-    this.win1 = data[0];
-    this.winner1 = this.win1.Rd1;
-    this.win2 = data[1];
-    this.winner2 = this.win2.Rd2;
+    //this.win1 = data[0];
+    //this.winner1 = this.win1.Rd1;
+    //this.win2 = data[1];
+    //this.winner2 = this.win2.Rd2;
     
     console.log(data);
     console.log(this.winner1);
