@@ -1,18 +1,12 @@
 page-gps {
-.ios, .md {
-
-    home-page {
-
-      .scroll {
-        height: 100%
-      }
 }
+
 #total {
         background-color: white;
         border: 1px solid black;
         bottom: 75%;
         height: 28px;
-        padding: 25px;
+        padding: 5px;
         position: absolute;
         left: 25px;
         color: red;
@@ -21,17 +15,18 @@ page-gps {
 #totalm {
         background-color: yellow;
         border: 1px solid black;
-        bottom: 71%;
+        bottom: 68%;
         height: 28px;
-        padding: 25px;
+        padding: 8px;
         position: absolute;
         left: 25px;
+        font-weight: bold;
 
       }
 #map {
     height: 100%;
     width: 100%;
 }
-}
 
-}
+
+

@@ -19,7 +19,7 @@ win2:any;
 winner2:any;
 rd1:any;
 selNoOfCourses: any;
-
+ww2:any;
 constructor(public navParams: NavParams, public http: Http, public storage: Storage, public nav: NavController) {
 
  //this.society = navParams.get("society");
@@ -37,18 +37,15 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
     this.S = (data);
     
     this.http.get('http://golf-rollup.co.uk/society/socWinners.php?Club=' + this.society,"")
+    
 	.map(res => res.json())
     .subscribe(data => {
-    //this.win1 = data[0];
-    //this.winner1 = this.win1.Rd1;
-    //this.win2 = data[1];
-    //this.winner2 = this.win2.Rd2;
-    
+    this.win1 = data;
+    let w1 = this.win1.Rd1;    
     console.log(data);
-    console.log(this.winner1);
-    console.log(this.winner2);
+    console.log(w1);
     
-    
+   
     
     this.http.get('http://golf-rollup.co.uk/society/noOfCourses.php?Club=' + this.society,"")
     .map(data => data.json())
