@@ -16,39 +16,30 @@ export class GpsPage {
   map: any;
   poly: any;
   labels = [];
-  
-  
-  
+  markers = [];
   constructor(public navCtrl: NavController, public geolocation: Geolocation) {
  
   }
   
-addMarker(){
- 
-  let marker = new google.maps.Marker({
-    map: this.map,
-    animation: google.maps.Animation.DROP,
-    position: this.map.getCenter()
-  });
-}
+
 clearLabels() {
     while (this.labels.length) {
     var label = this.labels[this.labels.length - 1];
     label.onRemove();
     this.labels.pop();
-     }
-}; 
+   }
+ }; 
     
 addLabel = function(label) {
     this.labels.push(label);
-    } 
+ } 
     
  loadMap(){
  var posOptions = {
     enableHighAccuracy: true,
     timeout: 20000,
     maximumAge: 0
-};
+ };
 
 this.geolocation.getCurrentPosition().then((position) => {
  
@@ -117,12 +108,12 @@ this.geolocation.getCurrentPosition().then((position) => {
                    (start.lat() + end.lat()) *0.5,
                    (start.lng() + end.lng()) *0.5
                );
-        
-       //var addLabel = (new Label({
-       //     map: map,
-       //     position: midpoint,
-       //     text: length + " yds"
-       //       }));
+        //var myLabel = new Label();
+          // addLabel = (new Label({
+          // map: map,
+         //  position: midpoint,
+          // text: length + " yds"
+          //    }));
 
     }
        var labelMarker = new google.maps.Marker({
@@ -131,7 +122,7 @@ this.geolocation.getCurrentPosition().then((position) => {
 			visible: false
 	});
  };
-       function handleEvent(event) {
+function handleEvent(event) {
      //    removeLabel();
            path.pop();
            path.push(event.latLng);
@@ -140,46 +131,34 @@ this.geolocation.getCurrentPosition().then((position) => {
                var start = path.getAt(i);
                var end = path.getAt(i + 1);
                var length = ((google.maps.geometry.spherical.computeDistanceBetween(start, end))*1.09361).toFixed(0);
-
                var midpoint = new google.maps.LatLng(
                    (start.lat() + end.lat()) / 2,
                    (start.lng() + end.lng()) / 2
                );
 
-      //   this.addLabel(new Label({
-      //      map: map,
-      //      position: midpoint,
-      //     text: length + " yds"
-      //          }));
-                
-                 
-
-         var lat = event.latLng.lat();
-         var lng = event.latLng.lng();
-         var f = new google.maps.LatLng(lat,lng);
-         var dis = (google.maps.geometry.spherical.computeDistanceBetween(latLng, f)* 1.09361)
-         this.d2 = dis.toFixed(0);
-         var dism = (google.maps.geometry.spherical.computeDistanceBetween(latLng, f))
-         var dm = dism.toFixed(0);
-         document.getElementById('total').innerHTML = this.d2 + ' yards';
-         document.getElementById('totalm').innerHTML = dm + ' mtrs';
-
-      }
-    }
-
+        // this.addLabel(new Label({
+        //    map: map,
+        //    position: midpoint,
+         //  text: length + " yds"
+        //        }));
  
-       });
+    var lat = event.latLng.lat();
+    var lng = event.latLng.lng();
+    var f = new google.maps.LatLng(lat,lng);
+    var dis = (google.maps.geometry.spherical.computeDistanceBetween(latLng, f)* 1.09361)
+    this.d2 = dis.toFixed(0);
+    var dism = (google.maps.geometry.spherical.computeDistanceBetween(latLng, f))
+    var dm = dism.toFixed(0);
+    document.getElementById('total').innerHTML = this.d2 + ' yards';
+    document.getElementById('totalm').innerHTML = dm + ' mtrs';
+
+   }
+  }
+ });
  
-  }   
-    
-    
-    
-  
+ 
+}   
 ionViewDidLoad(){
-    this.loadMap();
+   this.loadMap();
 }
- 
-
-
- 
 }
