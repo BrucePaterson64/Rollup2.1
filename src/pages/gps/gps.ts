@@ -3,8 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
 declare var google;
-//declare var Label;
-//declare var clearLabels;
+declare var label : any;
 
 @Component({
   selector: 'gps-page',
@@ -15,8 +14,10 @@ export class GpsPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   poly: any;
-  labels = [];
-  markers = [];
+  labels: any;
+  markers: any;
+  Label: any;
+  
   constructor(public navCtrl: NavController, public geolocation: Geolocation) {
  
   }
@@ -98,8 +99,8 @@ this.geolocation.getCurrentPosition().then((position) => {
           document.getElementById('totalm').innerHTML = dm + ' mtrs';
 
        //this.clearLabels();
-
-           for (var i = 0; i < path.getLength() - 1; i++) {
+       
+               for (var i = 0; i < path.getLength() - 1; i++) {
                var start = path.getAt(i);
                var end = path.getAt(i + 1);
                var length = ((google.maps.geometry.spherical.computeDistanceBetween(start, end))*1.09361).toFixed(0);
@@ -108,12 +109,12 @@ this.geolocation.getCurrentPosition().then((position) => {
                    (start.lat() + end.lat()) *0.5,
                    (start.lng() + end.lng()) *0.5
                );
-        //var myLabel = new Label();
-          // addLabel = (new Label({
-          // map: map,
-         //  position: midpoint,
-          // text: length + " yds"
-          //    }));
+        
+          //this.addLabel = (new Label({
+           //map: map,
+           //position: midpoint,
+           //text: length + " yds"
+            //}));
 
     }
        var labelMarker = new google.maps.Marker({
@@ -126,7 +127,7 @@ function handleEvent(event) {
      //    removeLabel();
            path.pop();
            path.push(event.latLng);
-     //    this.clearLabels();
+         this.clearLabels();
            for (var i = 0; i < path.getLength() - 1; i++) {
                var start = path.getAt(i);
                var end = path.getAt(i + 1);
@@ -136,11 +137,11 @@ function handleEvent(event) {
                    (start.lng() + end.lng()) / 2
                );
 
-        // this.addLabel(new Label({
-        //    map: map,
-        //    position: midpoint,
+         //this.addLabel(new Label({
+         //   map: map,
+         //   position: midpoint,
          //  text: length + " yds"
-        //        }));
+         //   }));
  
     var lat = event.latLng.lat();
     var lng = event.latLng.lng();
