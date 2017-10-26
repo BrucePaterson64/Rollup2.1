@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
 declare var google;
-declare var label : any;
+declare var Label;
 
 @Component({
   selector: 'gps-page',
@@ -14,40 +14,52 @@ export class GpsPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   poly: any;
-  labels: any;
   markers: any;
-  Label: any;
-  
+  labels:any;
+  label:any;
+    
   constructor(public navCtrl: NavController, public geolocation: Geolocation) {
  
   }
-  
+ 
+ ionViewDidLoad(){
+   this.loadMap();
+}
+ reFresh(refresher) {
+    this.navCtrl.push(GpsPage);
+  }
 
-clearLabels() {
-    while (this.labels.length) {
-    var label = this.labels[this.labels.length - 1];
-    label.onRemove();
-    this.labels.pop();
-   }
- }; 
-    
-addLabel = function(label) {
-    this.labels.push(label);
- } 
-    
  loadMap(){
  var posOptions = {
     enableHighAccuracy: true,
     timeout: 20000,
     maximumAge: 0
  };
+ 
+ this.labels = [];
+ 
+ var addLabel = function(label) 
+ {
+    this.labels.push(this.label);
+ } 
+ 
+ //var clearLabels = function() 
+ //{
+ //  while (this.labels.length) {
+ //   var label = this.labels[this.labels.length - 1];
+ //   label.onRemove();
+ //   this.labels.pop();
+ //  }
+ //}; 
+    
+ 
 
 this.geolocation.getCurrentPosition().then((position) => {
- 
+    
     var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     let mapOptions = {
     center: latLng,
-    zoom: 18,
+    zoom: 17,
     mapTypeId: google.maps.MapTypeId.SATELLITE
     }
     var startCoordinates = [
@@ -98,7 +110,7 @@ this.geolocation.getCurrentPosition().then((position) => {
           document.getElementById('total').innerHTML = d + ' yards';
           document.getElementById('totalm').innerHTML = dm + ' mtrs';
 
-       //this.clearLabels();
+  //     clearLabels();
        
                for (var i = 0; i < path.getLength() - 1; i++) {
                var start = path.getAt(i);
@@ -110,11 +122,11 @@ this.geolocation.getCurrentPosition().then((position) => {
                    (start.lng() + end.lng()) *0.5
                );
         
-          //this.addLabel = (new Label({
-           //map: map,
-           //position: midpoint,
-           //text: length + " yds"
-            //}));
+      var addLabel = (new Label({
+           map: map,
+           position: midpoint,
+           text: length + " yds"
+            }));
 
     }
        var labelMarker = new google.maps.Marker({
@@ -123,11 +135,14 @@ this.geolocation.getCurrentPosition().then((position) => {
 			visible: false
 	});
  };
+ 
+ 
+ 
 function handleEvent(event) {
-     //    removeLabel();
+          //this.removeLabel();
            path.pop();
            path.push(event.latLng);
-         this.clearLabels();
+           this.clearLabels;
            for (var i = 0; i < path.getLength() - 1; i++) {
                var start = path.getAt(i);
                var end = path.getAt(i + 1);
@@ -137,11 +152,11 @@ function handleEvent(event) {
                    (start.lng() + end.lng()) / 2
                );
 
-         //this.addLabel(new Label({
-         //   map: map,
-         //   position: midpoint,
-         //  text: length + " yds"
-         //   }));
+         var addLabel = (new Label({
+            map: map,
+            position: midpoint,
+           text: length + " yds"
+            }));
  
     var lat = event.latLng.lat();
     var lng = event.latLng.lng();
@@ -154,12 +169,14 @@ function handleEvent(event) {
     document.getElementById('totalm').innerHTML = dm + ' mtrs';
 
    }
+   
   }
+ 
  });
+  
  
+} 
+
  
-}   
-ionViewDidLoad(){
-   this.loadMap();
-}
+
 }
