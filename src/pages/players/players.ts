@@ -49,7 +49,6 @@ doRefresh(refresher) {
   }
 
   
-  
      loadPlayers(){
      this.dataService.load()
       .then(data1 => {
