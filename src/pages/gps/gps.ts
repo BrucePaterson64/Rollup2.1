@@ -15,8 +15,8 @@ export class GpsPage {
   map: any;
   poly: any;
   markers: any;
-  labels:any;
-  label:any;
+  //labels : any;
+  label: any;
     
   constructor(public navCtrl: NavController, public geolocation: Geolocation) {
  
@@ -26,7 +26,7 @@ export class GpsPage {
    this.loadMap();
 }
  reFresh(refresher) {
-    this.navCtrl.push(GpsPage);
+    this.navCtrl.setRoot(GpsPage);
   }
 
  loadMap(){
@@ -36,25 +36,28 @@ export class GpsPage {
     maximumAge: 0
  };
  
- this.labels = [];
+ var labels = [];
  
- var addLabel = function(label) 
+ let addLabel = function(label) 
  {
-    this.labels.push(this.label);
+    labels.push(label);
+    console.log(label);
  } 
  
- //var clearLabels = function() 
- //{
- //  while (this.labels.length) {
- //   var label = this.labels[this.labels.length - 1];
- //   label.onRemove();
- //   this.labels.pop();
- //  }
- //}; 
+ let clearLabels = function() 
+ {
+ console.log("clearing....");
+   while (labels.length) {
+    let label = labels[labels.length - 1];
+    console.log("W");
+    label.onRemove();
+    this.labels.pop();
+   }
+ }; 
     
  
 
-this.geolocation.getCurrentPosition().then((position) => {
+    this.geolocation.getCurrentPosition().then((position) => {
     
     var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     let mapOptions = {
@@ -76,7 +79,7 @@ this.geolocation.getCurrentPosition().then((position) => {
     
     poly.setMap(map);
     var marker = new google.maps.Marker({
-    position: map.getCenter(),
+    position: map.panBy(0,-250),
     draggable:true,
     map: map,
     });
@@ -110,7 +113,7 @@ this.geolocation.getCurrentPosition().then((position) => {
           document.getElementById('total').innerHTML = d + ' yards';
           document.getElementById('totalm').innerHTML = dm + ' mtrs';
 
-  //     clearLabels();
+     clearLabels();
        
                for (var i = 0; i < path.getLength() - 1; i++) {
                var start = path.getAt(i);
@@ -122,14 +125,14 @@ this.geolocation.getCurrentPosition().then((position) => {
                    (start.lng() + end.lng()) *0.5
                );
         
-      var addLabel = (new Label({
+      addLabel = (new Label({
            map: map,
            position: midpoint,
            text: length + " yds"
             }));
 
     }
-       var labelMarker = new google.maps.Marker({
+      var labelMarker = new google.maps.Marker({
 			position: midpoint,
 			map: map,
 			visible: false
@@ -139,10 +142,10 @@ this.geolocation.getCurrentPosition().then((position) => {
  
  
 function handleEvent(event) {
-          //this.removeLabel();
+           removeLabel();
            path.pop();
            path.push(event.latLng);
-           this.clearLabels;
+           clearLabels();
            for (var i = 0; i < path.getLength() - 1; i++) {
                var start = path.getAt(i);
                var end = path.getAt(i + 1);
@@ -152,10 +155,10 @@ function handleEvent(event) {
                    (start.lng() + end.lng()) / 2
                );
 
-         var addLabel = (new Label({
+            this.addLabel = (new Label({
             map: map,
             position: midpoint,
-           text: length + " yds"
+            text: length + " yds"
             }));
  
     var lat = event.latLng.lat();
@@ -171,7 +174,9 @@ function handleEvent(event) {
    }
    
   }
+ function removeLabel() {
  
+        }
  });
   
  
