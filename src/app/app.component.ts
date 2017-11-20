@@ -14,7 +14,8 @@ import { LoginPage } from '../pages/login/login';
 import { SocsettingsPage } from '../pages/socsettings/socsettings';
 import { AddSocietyPage } from '../pages/add-society/add-society';
 import {LeaderPage} from '../pages/leader/leader';
-
+import {SocCardPage } from '../pages/soc-card/soc-card';
+import {SocloginPage } from '../pages/soclogin/soclogin';
 import * as moment from 'moment/moment';
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +27,7 @@ export class MyApp {
   rootPage: any = 'HomePage';
 
   pages: Array<{title: string, component: any}>;
-
+  pages2: Array<{title: string, component: any}>;
   constructor( public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
@@ -41,7 +42,16 @@ export class MyApp {
       { title: 'LogIn', component: LoginPage },
       { title: 'Settings', component: SocsettingsPage }
     ];
-
+   this.pages2 = [
+      { title: 'Home', component: HomePage },
+      { title: 'Courses', component: CoursesPage },
+      { title: 'GPS Yardage', component: GpsPage },
+      { title: 'Players', component: PlayersPage },
+      { title: 'Results', component: ResultsPage },
+      { title: 'Roll Ups', component: SocsettingsPage },
+      { title: 'Score Card', component: SocCardPage },
+      { title: 'LogIn', component: SocloginPage }
+    ];
   }
 
   initializeApp() {

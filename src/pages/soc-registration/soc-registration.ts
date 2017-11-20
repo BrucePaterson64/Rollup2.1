@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LoginPage } from '../login/login';
-import { SocloginPage } from '../soclogin/soclogin';
+
 /**
- * Generated class for the HomePage page.
+ * Generated class for the SocRegistrationPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
@@ -11,25 +10,16 @@ import { SocloginPage } from '../soclogin/soclogin';
 
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-soc-registration',
+  templateUrl: 'soc-registration.html',
 })
-export class HomePage {
+export class SocRegistrationPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-  logEvent() {
-
-  this.navCtrl.push(LoginPage)
-  }
-  
-  RUlogEvent() {
-  
-  this.navCtrl.push(SocloginPage)
-  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+    console.log('ionViewDidLoad SocRegistrationPage');
   }
 
 }

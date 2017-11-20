@@ -1,25 +1,60 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SocloginPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-
+import { NavController, AlertController, LoadingController, Loading, IonicPage } from 'ionic-angular';
+import { AuthService } from '../../providers/auth-service/auth-service';
+import { CardPage } from '../card/card'; 
+import { CoursesPage } from '../courses/courses'; 
+import {Storage} from '@ionic/storage';
 @IonicPage()
 @Component({
   selector: 'page-soclogin',
   templateUrl: 'soclogin.html',
 })
 export class SocloginPage {
+  loading: Loading;
+  socRegisterCredentials = { email: '', password: '' };
+ 
+  constructor(public navCtrl: NavController, private auth: AuthService, private alertCtrl: AlertController, private loadingCtrl: LoadingController, public storage: Storage) { 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+ 
+  public soclogin() {
+    this.showLoading()
+   
+    console.log( this.socRegisterCredentials);
+    this.auth.soclogin(this.socRegisterCredentials).subscribe(allowed => {
+    console.log(this.socRegisterCredentials);
+      if (allowed) {
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SocloginPage');
-  }
+       //this.navCtrl.setRoot('CardPage');
+      } else {
+      this.showError("Access Denied");
+      }
+    },
+      error => {
+      this.showError(error);
+      });
+  };
+  public socCreateAccount() {
+    this.navCtrl.push('SocRegisterPage');
+  };
 
+  showLoading() {
+    this.loading = this.loadingCtrl.create({
+      content: 'Please wait...',
+      dismissOnPageChange: true
+      
+    });
+  this.loading.present();
+  };
+ 
+  showError(text) {
+  //  this.loading.dismiss();
+ 
+    let alert = this.alertCtrl.create({
+      title: 'Fail',
+      subTitle: text,
+      buttons: ['OK']
+    });
+    alert.present(prompt);
+  };
 }

@@ -31,8 +31,11 @@ import { ResultsServiceProvider } from '../providers/results-service/results-ser
 import { CalcServiceProvider } from '../providers/calc-service/calc-service';
 import {LeaderPage} from '../pages/leader/leader';
 import { Geolocation } from '@ionic-native/geolocation';
-
-
+import {SocloginPage} from '../pages/soclogin/soclogin';
+import {SocRegisterPage} from '../pages/soc-register/soc-register';
+import {SocRegistrationPage} from '../pages/soc-registration/soc-registration';
+import {SocHomePage} from '../pages/soc-home/soc-home';
+import {SocCardPage} from '../pages/soc-card/soc-card';
 @NgModule({
   declarations: [
     MyApp,
@@ -47,7 +50,11 @@ import { Geolocation } from '@ionic-native/geolocation';
     SocsettingsPage,
     AddPlayerPage,
     AddSocietyPage,
-    LeaderPage
+    SocloginPage,
+    LeaderPage,
+    SocHomePage,
+    SocRegistrationPage,
+    SocCardPage
      ],
      
   imports: [
@@ -80,7 +87,11 @@ import { Geolocation } from '@ionic-native/geolocation';
     SocsettingsPage,
     AddPlayerPage,
     AddSocietyPage,
-    LeaderPage
+    LeaderPage,
+    SocloginPage,
+    SocHomePage,
+    SocRegistrationPage,
+    SocCardPage
     
   ],
   providers: [

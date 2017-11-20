@@ -49,7 +49,6 @@ export class GpsPage {
  console.log("clearing....");
    while (labels.length) {
     let label = labels[labels.length - 1];
-    console.log("W");
     label.onRemove();
     this.labels.pop();
    }
