@@ -16,6 +16,7 @@ import { AddSocietyPage } from '../pages/add-society/add-society';
 import {LeaderPage} from '../pages/leader/leader';
 import {SocCardPage } from '../pages/soc-card/soc-card';
 import {SocloginPage } from '../pages/soclogin/soclogin';
+import {SocplayersPage} from '../pages/socplayers/socplayers';
 import * as moment from 'moment/moment';
 @Component({
   templateUrl: 'app.html'
@@ -46,7 +47,7 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Courses', component: CoursesPage },
       { title: 'GPS Yardage', component: GpsPage },
-      { title: 'Players', component: PlayersPage },
+      { title: 'Players', component: SocplayersPage },
       { title: 'Results', component: ResultsPage },
       { title: 'Roll Ups', component: SocsettingsPage },
       { title: 'Score Card', component: SocCardPage },

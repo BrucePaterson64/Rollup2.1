@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, IonicPage } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
 import { CardPage} from '../card/card'; 
-
+import { MenuController } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-register',
@@ -12,7 +12,7 @@ export class RegisterPage {
   createSuccess = false;
   registerCredentials = { email: '', password: '', name: '', club: '' };
  
-  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController) { }
+  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, public menuCtrl: MenuController) { }
  
   public register() {
 
@@ -46,5 +46,9 @@ export class RegisterPage {
       ]
     });
     alert.present();
+  }
+   ionViewDidLoad() {
+    this.menuCtrl.enable(true, 'menu2');
+    this.menuCtrl.enable(false, 'menu1');
   }
 }

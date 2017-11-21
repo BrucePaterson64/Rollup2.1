@@ -10,7 +10,7 @@ export class DataServiceProvider {
 public name;
 course : any;
 Course : any;
-
+club;
   constructor(public http: Http, private storage: Storage) {
 
    
@@ -19,12 +19,16 @@ Course : any;
   data1 : any;
   dataC : any;
   datad :any;
+  datard :any;
   res : any;
   c : any;
   society = "";
   results = "";
   email = "";
   pw = "";
+  day:any;
+  time:any;
+  
   
   load() {
   
@@ -63,6 +67,35 @@ Course : any;
 
 }
 
+  loadru() {
+  
+  if (this.data1) {
+    // already loaded data
+    return Promise.resolve(this.data1);
+  }
+    
+    return new Promise(resolve => {
+    this.storage.get('club').then((club) => {
+    this.club = club;   
+    this.storage.get('day').then((day) => {
+    this.day = day;
+    this.storage.get('time').then((time) => {
+    this.time = time;
+      
+    this.http.get('http://golf-rollup.co.uk/aAppTeam.php?Club='+this.club+'&Day='+this.day+'&TeeTime='+this.time, "")
+    	.map(res => res.json())
+		.subscribe(data1 => {
+		this.data1 = data1;
+		resolve(this.data1);
+	console.log(this.data1);
+ 	 });
+  
+	});
+     });
+     	});
+        });
+
+}
 reload() {
   
     return new Promise(resolve => {
@@ -94,7 +127,30 @@ reload() {
         });
 
 }
+reloadru() {
+  
+    return new Promise(resolve => {
+    this.storage.get('club').then((club) => {
+    this.club = club;   
+    this.storage.get('day').then((day) => {
+    this.day = day;
+    this.storage.get('time').then((time) => {
+    this.time = time;
+      
+    this.http.get('http://golf-rollup.co.uk/aAppTeam.php?Club='+this.club+'&Day='+this.day+'&TeeTime='+this.time, "")
+    	.map(res => res.json())
+		.subscribe(data1 => {
+		this.data1 = data1;
+		resolve(this.data1);
+	console.log(this.data1);
+ 	 });
+  
+	});
+     });
+     	});
+        });
 
+}
 
 
 loadCs() {
@@ -114,6 +170,30 @@ if (this.datad) {
     .subscribe(datad => {
     this.datad = datad;
     resolve(this.datad);
+  }); 
+  });
+ })  
+
+}
+
+
+loadCru() {
+    
+if (this.datard) {
+    // already loaded data
+    return Promise.resolve(this.datard);
+
+      }
+  return new Promise(resolve => {
+    this.storage.get('club').then((club) => {
+    this.club = club;
+    console.log(this.club);
+    //this.c = course.Course;
+    this.http.get('http://golf-rollup.co.uk/aAppCourses.php?Club=' + this.club , "")
+    .map(res => res.json())
+    .subscribe(datard => {
+    this.datard = datard;
+    resolve(this.datard);
   }); 
   });
  })  

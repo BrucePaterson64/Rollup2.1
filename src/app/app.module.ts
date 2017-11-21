@@ -36,6 +36,10 @@ import {SocRegisterPage} from '../pages/soc-register/soc-register';
 import {SocRegistrationPage} from '../pages/soc-registration/soc-registration';
 import {SocHomePage} from '../pages/soc-home/soc-home';
 import {SocCardPage} from '../pages/soc-card/soc-card';
+import {SocplayersPage} from '../pages/socplayers/socplayers';
+import {SocAddPlayerPage} from '../pages/soc-add-player/soc-add-player';
+import {SocDelPlayerPage} from '../pages/soc-del-player/soc-del-player';
+import {SocEditPlayerPage} from '../pages/soc-edit-player/soc-edit-player';
 @NgModule({
   declarations: [
     MyApp,
@@ -54,7 +58,11 @@ import {SocCardPage} from '../pages/soc-card/soc-card';
     LeaderPage,
     SocHomePage,
     SocRegistrationPage,
-    SocCardPage
+    SocCardPage,
+    SocplayersPage,
+    SocAddPlayerPage,
+    SocDelPlayerPage,
+    SocEditPlayerPage
      ],
      
   imports: [
@@ -91,7 +99,11 @@ import {SocCardPage} from '../pages/soc-card/soc-card';
     SocloginPage,
     SocHomePage,
     SocRegistrationPage,
-    SocCardPage
+    SocCardPage,
+    SocplayersPage,
+    SocAddPlayerPage,
+    SocDelPlayerPage,
+    SocEditPlayerPage
     
   ],
   providers: [
