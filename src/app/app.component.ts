@@ -18,6 +18,7 @@ import {SocCardPage } from '../pages/soc-card/soc-card';
 import {SocloginPage } from '../pages/soclogin/soclogin';
 import {SocplayersPage} from '../pages/socplayers/socplayers';
 import * as moment from 'moment/moment';
+import { SocietiesPage } from '../pages/societies/societies';
 @Component({
   templateUrl: 'app.html'
   
@@ -45,7 +46,7 @@ export class MyApp {
     ];
    this.pages2 = [
       { title: 'Home', component: HomePage },
-      { title: 'Courses', component: CoursesPage },
+      { title: 'Courses', component: SocietiesPage },
       { title: 'GPS Yardage', component: GpsPage },
       { title: 'Players', component: SocplayersPage },
       { title: 'Results', component: ResultsPage },

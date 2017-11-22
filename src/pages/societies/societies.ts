@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SocietiesPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-
+import {Storage} from '@ionic/storage';
+import {DataServiceProvider} from '../../providers/data-service/data-service';
+import { EditCoursePage } from '../edit-course/edit-course';
 @IonicPage()
 @Component({
   selector: 'page-societies',
@@ -15,11 +10,39 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SocietiesPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+	public course: any;
+	society : any ;
+	//toggleStatus: boolean;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SocietiesPage');
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataServiceProvider, public storage : Storage) {
+ this.loadCourses();
+    }
+
+loadCourses() {
+	//this.toggleStatus=false;
+
+     this.dataService.loadCourseRU()
+     .then(dataC => {
+     this.course = dataC;
+     console.log(this.course);
+    });
   }
+editCourse(d) {
+  this.navCtrl.push(EditCoursePage, {
+  course: d
+  
+});
+
+}
+//updateItem(d) {
+//console.log(d);
+//this.navCtrl.push(CardPage, {
+//  name: (d)
+//})
+//}
+  ionViewDidLoad() {
+   
+
+	 }  
 
 }

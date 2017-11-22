@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{course.Club}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+<ion-content class="home">
+
+  <ion-list>
+
+  </ion-list>
+
+<div layout-align='center center'layout='coloumn' >
+<table style="width:100%">
+
+
+         <tr class="row header">
+           <td class="col">Hole</td>
+           <td class="col1">Index</td>
+           <td class="col">Par</td>
+
+         </tr>
+         <tr class="row header" *ngFor = "let par of c; let i=index; let j=index;" >
+           <td class="col">{{i +1}}</td>
+           <td class="col1"><input type="text" style="width:45px; background:LightCoral; text-align:center" ng-model={{i +1}} value="{{par.Index}}"></td>
+           <td class="col">{{par.Par}}</td>
+
+         </tr>
+</table>
+  <div>
+   <button ion-button color="primary" full (click)="submitChanges()">Submit Changes</button>
+  </div>
+</div>
+
+
+
+
+</ion-content>
+

@@ -217,7 +217,22 @@ if (this.dataC) {
  })  
 
 }
+loadCourseRU() {
+if (this.dataC) {
+    return Promise.resolve(this.dataC);
+  }
+  return new Promise(resolve => {
+  
+  this.http.get('http://golf-rollup.co.uk/aAppCourse.php', "")
+      .map(res => res.json())
+    .subscribe(dataC => {
+    this.dataC = dataC;
+    resolve(this.dataC);
+  
+   });
+ })  
 
+}
 loadCourses() {
 if (this.data) {
   return Promise.resolve(this.data);

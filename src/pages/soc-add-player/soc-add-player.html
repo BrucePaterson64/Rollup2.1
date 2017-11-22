@@ -1,18 +1,25 @@
-<!--
-  Generated template for the SocAddPlayerPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
+ <ion-header>
   <ion-navbar>
-    <ion-title>socAddPlayer</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+      <ion-title>Add a Player </ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+<div align="center"><h3> Add a Player</h3></div>
+<br>
+<table width="100%">
+  <tr><td >Name:</td><td colspan="2" ><input style="color:red; " type="text" [(ngModel)]="selected.Player" name="name" placeholder="Insert Name"></td></tr>
+  <tr><td >Handicap:</td><td colspan="2"><input style="color:red; " type="text" [(ngModel)]="selected.Hcp" name="hcp" placeholder="Insert Handicap"></td></tr>
+  <tr><td>Club:</td><td ><input style="color:red; width:100%" [(ngModel)]="selected.Club" value={{club}} ></td><td align="center"></td></tr>
+  <tr><td >Roll Up Day:</td><td colspan="2"><input style="color:red; " type="text" [(ngModel)]="selected.Day" name="day" placeholder="Insert Day" value={{day}}></td></tr>
+  <tr><td >Roll Up Time:</td><td colspan="2"><input style="color:red; " type="text" [(ngModel)]="selected.Time" name="time" placeholder="Insert Time" value={{time}}></td></tr>
+</table>
+<br>
+<button ion-button full (click)="addPlayer(selected)">Submit Player</button>
 
 </ion-content>
+

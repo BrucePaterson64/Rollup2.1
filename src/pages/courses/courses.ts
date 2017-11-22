@@ -16,7 +16,7 @@ export class CoursesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataServiceProvider, public storage : Storage) {
  
-   
+   //console.log(1);
   
   this.storage.get('society').then((society) => {
     this.society = society;

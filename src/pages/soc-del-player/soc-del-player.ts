@@ -12,7 +12,7 @@ import { Storage } from '@ionic/storage';
 })
 
 export class SocDelPlayerPage {
-    public name; Club; Hcp; day; time; club; data; RevHcp;
+    public name; Club; Hcp; day; time; club; data; RevHcp; ID;
     
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public menuCtrl: MenuController, private storage: Storage) {
   
@@ -35,6 +35,7 @@ export class SocDelPlayerPage {
         this.Hcp = this.data.Hcp;
 		this.RevHcp = this.data.RevHcp;
         this.Club = this.data.Club;
+        this.ID = this.data.ID
 	
  	 });   
     });    
@@ -42,7 +43,7 @@ export class SocDelPlayerPage {
   
   delPlayer(name) {
   
-  this.http.get('http://golf-rollup.co.uk/aAppDelPlayer.php?Player='+this.name.Player + '&Club='+this.Club+ '&Hcp=' + this.Hcp+ '&TeeTime=' + this.time+ '&DayS=' + this.day)
+  this.http.get('http://golf-rollup.co.uk/aAppDelPlayer.php?Player='+this.name.Player + '&Club='+this.Club+ '&Hcp=' + this.Hcp+ '&TeeTime=' + this.time+ '&DayS=' + this.day+'&ID=' +this.ID)
   .subscribe(res => {
   this.navCtrl.setRoot(SocplayersPage);
 })

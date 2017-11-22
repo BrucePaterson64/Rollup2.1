@@ -40,6 +40,9 @@ import {SocplayersPage} from '../pages/socplayers/socplayers';
 import {SocAddPlayerPage} from '../pages/soc-add-player/soc-add-player';
 import {SocDelPlayerPage} from '../pages/soc-del-player/soc-del-player';
 import {SocEditPlayerPage} from '../pages/soc-edit-player/soc-edit-player';
+import { SocietiesPage } from '../pages/societies/societies';
+import { EditCoursePage } from '../pages/edit-course/edit-course';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -62,7 +65,9 @@ import {SocEditPlayerPage} from '../pages/soc-edit-player/soc-edit-player';
     SocplayersPage,
     SocAddPlayerPage,
     SocDelPlayerPage,
-    SocEditPlayerPage
+    SocEditPlayerPage,
+    SocietiesPage,
+    EditCoursePage
      ],
      
   imports: [
@@ -103,7 +108,9 @@ import {SocEditPlayerPage} from '../pages/soc-edit-player/soc-edit-player';
     SocplayersPage,
     SocAddPlayerPage,
     SocDelPlayerPage,
-    SocEditPlayerPage
+    SocEditPlayerPage,
+    SocietiesPage,
+    EditCoursePage
     
   ],
   providers: [

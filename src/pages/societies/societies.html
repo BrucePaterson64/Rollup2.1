@@ -3,6 +3,33 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Societies</ion-title>
+    <ion-title>Available Golf Courses</ion-title>
   </ion-navbar>
 </ion-header>
+
+
+
+
+<ion-content padding>
+    <div align="center">  <h3>Add a Golf Course -> <label><ion-icon item-end name="add-circle" (click)="newCourse()"></ion-icon></label></h3></div>
+    <ion-item-sliding  *ngFor="let d of course" >
+    <ion-label>{{d.Club}} </ion-label>
+    <ion-item-options>
+            <button ion-button color="primary" (click)="editPlayer(person)">Edit</button>
+     </ion-item-options>
+     </ion-item-sliding>
+
+    <ion-list>
+
+    <ion-item-sliding *ngFor="let d of course" >
+        <ion-item>{{d.Club}} <ion-icon name="arrow-back" item-right></ion-icon></ion-item>
+            <ion-item-options>
+            <button ion-button color="primary" (click)="editCourse(d)">Edit</button>
+
+      </ion-item-options>
+
+    </ion-item-sliding>
+ </ion-list>
+
+</ion-content>
+
