@@ -13,17 +13,17 @@
 <br>
 <table>
 	<tr><td >Name:</td><td  colspan="2">{{name.Player}}</td></tr>
-		<tr><td>Handicap:</td><td align="center" width="100px">{{Hcp}}</td><td  width="160px"><input style="color:red; width:150px" type="text" [(ngModel)]="selected.Hcp" name="Hcp" placeholder="Insert New Hcp"></td></tr>
-			<tr><td>Revised Hcp:</td><td align="center">{{RevHcp}}</td><td align="center" ><input style="color:red; width:150px" type="text" [(ngModel)]="selected.revHcp" name="revHcp" placeholder="Insert Rev Hcp"></td></tr>
-				<tr><td>Club:</td><td colspan="2">{{Club}}</td>
-					</tr>
-					</table>
-<div align="center">
-	<p><b><u>Revised Handicap:</u></b><br>
-	To manually adjust penalty shots for winning a round.</p>
-</div>
-<br>
+	<tr><td>Handicap:</td><td align="center" width="100px">{{Hcp}}</td><td  width="160px"><input style="color:red; width:150px" type="text" [(ngModel)]="selected.Hcp" name="Hcp" placeholder="Insert New Hcp" value={{Hcp}}></td></tr>
+	<tr><td>Revised Hcp:</td><td align="center">{{RevHcp}}</td><td align="center" ><input style="color:red; width:150px" type="text" [(ngModel)]="selected.revHcp" name="revHcp" placeholder="Insert Rev Hcp" value={{RevHcp}}></td></tr>
+	<tr><td>Club:</td><td colspan="2">{{Club}}</td></tr>
+</table>
 
+<br>
+<table>
+	<tr><td >Roll Up Day:</td><td align="center"  width="160px"><input style="color:red; width:150px" type="text" [(ngModel)]="selected.Day" name="Day" placeholder="Insert Day" value={{day}}></td></tr>
+	<tr><td>Roll Up Time:</td><td align="center"  width="160px"><input style="color:red; width:150px" type="text" [(ngModel)]="selected.Time" name="Time" placeholder="Insert Time" value={{time}}></td></tr>
+
+</table>
 
 <br>
  <button ion-button full (click)="editPlayer(data)">Submit Changes</button>

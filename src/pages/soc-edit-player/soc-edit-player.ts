@@ -13,8 +13,8 @@ import { Storage } from '@ionic/storage';
 })
 export class SocEditPlayerPage {
 
-  public name; day; time; club; data; Hcp; Club; RevHcp;
-  selected = {Hcp:'', revHcp : '', club : ''}
+  public name; day; time; club; data; Hcp; Club; RevHcp; 
+  selected = {Hcp:'', revHcp : '', club : '', Day : '', Time : ''}
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public menuCtrl: MenuController, private storage: Storage) {
     this.name = navParams.get("name");
@@ -45,9 +45,9 @@ export class SocEditPlayerPage {
 
 editPlayer(name) {
 console.log(name);
- this.http.get('http://golf-rollup.co.uk/appEditPlayer.php?Player='+this.name.Player + '&Club='+this.club + '&DayS='+this.day + '&TeeTime='+this.time + '&Hcp='+this.selected.Hcp + '&RevHcp='+this.selected.revHcp)
+ this.http.get('http://golf-rollup.co.uk/appEditPlayer.php?Player='+this.name.Player + '&Club='+this.club + '&DayS='+this.selected.Day + '&TeeTime='+this.selected.Time + '&Hcp='+this.selected.Hcp + '&RevHcp='+this.selected.revHcp)
   .subscribe(res => {
-  this.navCtrl.push(SocplayersPage);
+  this.navCtrl.setRoot(SocplayersPage);
 })
 
 }

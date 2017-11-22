@@ -1,18 +1,25 @@
-<!--
-  Generated template for the SocDelPlayerPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
+ <ion-header>
   <ion-navbar>
-    <ion-title>socDelPlayer</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Delete Player</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+    <div align="center">   <h3>Deleting Player....</h3> </div><br>
+<div align="center">
+    <table width="100%">
+        <tr><td width="40%">Name:</td><td width="60%">{{name.Player}}</td></tr>
+        <tr><td>Club:</td><td>{{Club}}</td></tr>
+        <tr><td>Handicap:</td><td>{{Hcp}}</td></tr>
+        <tr><td>Day:</td><td>{{day}}</td></tr>
+        <tr><td>Time:</td><td>{{time}}</td></tr>
+    </table>
+    <br>
+     <button ion-button full (click)="delPlayer(data)">Continue to DELETE</button>
+</div>
 
 </ion-content>
