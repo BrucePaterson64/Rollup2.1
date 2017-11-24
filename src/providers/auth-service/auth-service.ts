@@ -23,8 +23,9 @@ export class User {
   day: string;
   time: string;
   hcp: string;
+  
  
-  constructor(hcp: string, name: string, email: string, club: string, password: string, day: string, time: string, society: string, public storage: Storage) {
+  constructor(c: any, hcp: string, name: string, email: string, club: string, password: string, day: string, time: string, society: string, public storage: Storage) {
     this.name = name;
     this.email = email;    
     this.society = society;
@@ -32,6 +33,7 @@ export class User {
     this.day = day;
     this.time = time;
     this.hcp = hcp;
+    
    }
    
 }
@@ -39,7 +41,7 @@ export class User {
 @Injectable()
 export class AuthService {
 @ViewChild('Nav') nav: Nav;
- 
+ cl; club; time; day; name; player;
   constructor(public http: Http, private app: App, private storage: Storage){
    
   }
@@ -106,10 +108,28 @@ export class AuthService {
          }); 
         this.storage.set('password', socCredentials.password).then(() => {
           });
-        
+         this.http.get('http://golf-rollup.co.uk/appRollup.php?email='+socCredentials.email+'&password='+socCredentials.password, "")
+        .map(data => data.json())
+        .subscribe(data => {
+        this.data = (data[0]);
+        this.cl = this.data['club'];
+        this.time = this.data['time'];
+        this.day = this.data['day'];
+        this.player = this.data['name'];
+        this.storage.set('name', this.player).then(() => {
+        this.storage.set('club', this.cl).then(() => {
+        this.storage.set('day', this.day).then(() => {
+        this.storage.set('time', this.time).then(() => {
+          
+      nav.setRoot(SocHomePage);
+          }); 
+        });
+      });
+    });
+        console.log(this.day,this.time);
+         })
            
-        nav.setRoot(SocHomePage);
-      } else {
+        } else {
 
       //nav.push(SocRegisterPage); 
       }
