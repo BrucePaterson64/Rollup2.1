@@ -42,6 +42,11 @@ import {SocDelPlayerPage} from '../pages/soc-del-player/soc-del-player';
 import {SocEditPlayerPage} from '../pages/soc-edit-player/soc-edit-player';
 import { SocietiesPage } from '../pages/societies/societies';
 import { EditCoursePage } from '../pages/edit-course/edit-course';
+import { RollupPage } from '../pages/rollup/rollup';
+import { EditrollupPage } from '../pages/editrollup/editrollup';
+import { DelrollupPage } from '../pages/delrollup/delrollup';
+
+
 
 @NgModule({
   declarations: [
@@ -67,7 +72,10 @@ import { EditCoursePage } from '../pages/edit-course/edit-course';
     SocDelPlayerPage,
     SocEditPlayerPage,
     SocietiesPage,
-    EditCoursePage
+    EditCoursePage,
+    RollupPage,
+    EditrollupPage,
+    DelrollupPage
      ],
      
   imports: [
@@ -110,7 +118,10 @@ import { EditCoursePage } from '../pages/edit-course/edit-course';
     SocDelPlayerPage,
     SocEditPlayerPage,
     SocietiesPage,
-    EditCoursePage
+    EditCoursePage,
+    RollupPage,
+    EditrollupPage,
+    DelrollupPage
     
   ],
   providers: [

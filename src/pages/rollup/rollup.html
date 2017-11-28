@@ -1,0 +1,35 @@
+rollup.html
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+      <ion-title>{{Club}} Roll Ups</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+   <div align="center"><h3>My Roll Ups:</h3></div>
+    <ion-item-sliding *ngFor="let p of res" >
+        <ion-item (click)="useRollup(p)">{{p.Day}} - {{p.Time}} - (Click to use)<ion-icon name="arrow-back" item-right></ion-icon></ion-item>
+            <ion-item-options >
+            <button ion-button color="primary" (click)="editPlayer(person)">Edit</button>
+            <button ion-button color="danger" (click)="removePlayer(person)">Delete</button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+</ion-list>
+
+<ion-list>
+   <div align="center"><h3>{{Club}} Roll Ups:</h3></div>
+    <ion-item *ngFor="let d of data" >
+        <ion-item>{{d.Day}} - {{d.Time}}</ion-item>
+
+
+    </ion-item>
+</ion-list>
+
+</ion-content>

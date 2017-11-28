@@ -17,8 +17,9 @@ import {LeaderPage} from '../pages/leader/leader';
 import {SocCardPage } from '../pages/soc-card/soc-card';
 import {SocloginPage } from '../pages/soclogin/soclogin';
 import {SocplayersPage} from '../pages/socplayers/socplayers';
-import * as moment from 'moment/moment';
+//import * as moment from 'moment/moment';
 import { SocietiesPage } from '../pages/societies/societies';
+import { RollupPage } from '../pages/rollup/rollup';
 @Component({
   templateUrl: 'app.html'
   
@@ -44,13 +45,13 @@ export class MyApp {
       { title: 'LogIn', component: LoginPage },
       { title: 'Settings', component: SocsettingsPage }
     ];
-   this.pages2 = [
+  this.pages2 = [
       { title: 'Home', component: HomePage },
       { title: 'Courses', component: SocietiesPage },
       { title: 'GPS Yardage', component: GpsPage },
       { title: 'Players', component: SocplayersPage },
       { title: 'Results', component: ResultsPage },
-      { title: 'Roll Ups', component: SocsettingsPage },
+      { title: 'Roll Ups', component: RollupPage },
       { title: 'Score Card', component: SocCardPage },
       { title: 'LogIn', component: SocloginPage }
     ];

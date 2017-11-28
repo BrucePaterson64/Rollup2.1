@@ -9,10 +9,13 @@ import { SocCardPage} from '../soc-card/soc-card';
   templateUrl: 'soc-home.html',
 })
 export class SocHomePage {
-    Club;
-    Day;
-    Time;
+    Club; Day; Time; public name; namec; namet; named;
+    
+  
+    
   constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController, private storage: Storage) {
+  
+  
   
   storage.get('club').then((val) => {
   this.Club = val;
@@ -29,10 +32,27 @@ export class SocHomePage {
   card() {
   this.navCtrl.setRoot(SocCardPage);
   }
+    onPageWillEnter(){
   
+  this.namec = this.navParams.get("namec");
+  this.namet = this.navParams.get("namet");
+  this.named = this.navParams.get("named");
+  
+  this.storage.set('club', this.namec).then(() => {
+         }); 
+  this.storage.set('time', this.namet).then(() => {
+          });
+  this.storage.set('day', this.named).then(() => {
+         }); 
+        
+  
+  }
   ionViewDidLoad() {
+  this.onPageWillEnter();
     this.menuCtrl.enable(true, 'menu2');
     this.menuCtrl.enable(false, 'menu1');
+    
+
   }
 
 }

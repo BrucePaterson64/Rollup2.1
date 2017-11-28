@@ -6,6 +6,7 @@ import {DataServiceProvider} from '../../providers/data-service/data-service';
 import {CoursesPage} from '../courses/courses';
 import { ToastController, AlertController } from 'ionic-angular';
 import {ResultsPage} from '../results/results';
+import moment from 'moment';
 
 @IonicPage()
 @Component({
@@ -15,7 +16,7 @@ import {ResultsPage} from '../results/results';
 })
 
 export class SocCardPage {
-  public name;
+  public name; rollup;
   public Course : any;
   public player: any;
   public Club : any;
@@ -49,10 +50,12 @@ export class SocCardPage {
   time:any;
   newDate:any;
   m: string;
+  yrwk;
+  
   selected = { Hcp: '', Score: '' };
   
   constructor( public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public http: Http, public dataService: DataServiceProvider, public toastCtrl: ToastController,public alertCtrl: AlertController) {
-
+  
 
     var d = new Date();
     this.n = d.toLocaleDateString('en-GB');
@@ -231,11 +234,10 @@ submitResult() {
   this.storage.get('day').then((day) => {
   });
 
-var d = new Date();
-var n = d.getFullYear();
-var m = moment(d).weeks();
-var newDate = (n+''+m);
-console.log(newDate);
+  let y = moment().year();
+  let w = moment().week();
+  let yrwk = (y +''+ w);
+console.log(yrwk);
 
 var nHcp  = this.selectedHcp;
 var nPoints  =   this.totPts;
@@ -336,7 +338,7 @@ if(nPoints > 36 && (parseFloat(nHcp) > 20.4) && shots > K)
          
           text: 'Continue',
           handler: () => {
-          this.http.get ('http://golf-rollup.co.uk/aAppSubmitScores.php?Club='+ this.club + '&Player='+ this.selectedPlayer +'&Day='+ this.day +'&Time='+ this.time +'&Pts='+ this.totPts +'&yrwk='+ newDate +'&Hcp='+ this.selectedHcp +'&RevHcp='+ RrevHcp,"")
+          this.http.get ('http://golf-rollup.co.uk/aAppSubmitScores.php?Club='+ this.Club + '&Player='+ this.selectedPlayer +'&Day='+ this.day +'&Time='+ this.time +'&Pts='+ this.totPts +'&yrwk='+ yrwk +'&Hcp='+ this.selectedHcp +'&RevHcp='+ RrevHcp,"")
           .subscribe(res => {
           this.navCtrl.push(ResultsPage, {society: this.society});
                 })
