@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {DataServiceProvider} from '../../providers/data-service/data-service';
 import { EditCoursePage } from '../edit-course/edit-course';
+import { AddCoursePage } from '../add-course/add-course';
+
 @IonicPage()
 @Component({
   selector: 'page-societies',
@@ -34,12 +36,10 @@ editCourse(d) {
 });
 
 }
-//updateItem(d) {
-//console.log(d);
-//this.navCtrl.push(CardPage, {
-//  name: (d)
-//})
-//}
+newCourse() {
+
+this.navCtrl.push(AddCoursePage)
+}
   ionViewDidLoad() {
    
 

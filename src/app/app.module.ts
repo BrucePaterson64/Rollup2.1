@@ -48,6 +48,8 @@ import { DelrollupPage } from '../pages/delrollup/delrollup';
 import {Sochome2Page} from '../pages/sochome2/sochome2';
 import { SocresultsPage } from '../pages/socresults/socresults';
 import { SocLeaderBoardPage } from '../pages/soc-leader-board/soc-leader-board';
+import { AddCoursePage } from '../pages/add-course/add-course';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -78,7 +80,8 @@ import { SocLeaderBoardPage } from '../pages/soc-leader-board/soc-leader-board';
     DelrollupPage,
     Sochome2Page,
     SocresultsPage,
-    SocLeaderBoardPage
+    SocLeaderBoardPage,
+    AddCoursePage
     
      ],
      
@@ -128,7 +131,8 @@ import { SocLeaderBoardPage } from '../pages/soc-leader-board/soc-leader-board';
     DelrollupPage,
     Sochome2Page,
     SocresultsPage,
-    SocLeaderBoardPage
+    SocLeaderBoardPage,
+    AddCoursePage
     
   ],
   providers: [
