@@ -4,15 +4,17 @@ import { IonicPage,  NavParams, NavController} from 'ionic-angular';
 import { Http } from '@angular/http';
 import {Storage} from '@ionic/storage';
 import { OnInit } from '@angular/core';
-import {SocLeaderBoardPage} from '../soc-leader-board/soc-leader-board';
+
 import moment from 'moment';
+
 @IonicPage()
 @Component({
-  selector: 'page-socresults',
-  templateUrl: 'socresults.html',
+  selector: 'page-soc-leader-board',
+  templateUrl: 'soc-leader-board.html',
 })
-export class SocresultsPage {
-player; time; day; Club; S; myYear; myWeek; week; ddate;
+export class SocLeaderBoardPage {
+
+player; time; day; Club; S; myYear; myWeek; week; ddate; maxdate; Maxdate; scores;
 
 constructor(public navParams: NavParams, public http: Http, public storage: Storage, public nav: NavController) {
 
@@ -39,11 +41,24 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
     var week = (myYear +''+ myWeek);
     this.ddate = myWeek;
     
-    this.http.get('http://golf-rollup.co.uk/aAppWeeklyResults.php?Club='+this.Club+'&Day='+this.day+'&TeeTime='+this.time+'&yrwk='+week, "")
+    this.http.get('http://golf-rollup.co.uk/aAppMaxDate.php?Club='+this.Club+'&DayS='+this.day+'&TeeTime='+this.time, "")
         .map(res => res.json())
         .subscribe(res => {
-        this.S = (res);
+        this.maxdate = res;
+        this.storage.set('maxdate', this.maxdate).then(() => {
+         }); 
+		
+		this.storage.get('maxdate').then((val) => {
+        this.Maxdate = val;
+        
+        
+         this.http.get('http://golf-rollup.co.uk/aAppResults.php?Club='+this.Club+'&DayS='+this.day+'&TeeTime='+this.time+'&Week='+this.Maxdate, "")
+        .map(res => res.json())
+        .subscribe(res => {
+        this.scores = (res);
    
+});
+ });
 });
 });
 });
@@ -52,12 +67,10 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
    
  }
   
-  public leaderBoard() {
-
-  this.nav.push(SocLeaderBoardPage);
-  }
+  
   ionViewDidLoad() {
-    console.log('ionViewDidLoad socResultsPage');
+    console.log('ionViewDidLoad ResultsPage');
   }
 
 }
+

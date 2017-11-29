@@ -46,8 +46,8 @@ import { RollupPage } from '../pages/rollup/rollup';
 import { EditrollupPage } from '../pages/editrollup/editrollup';
 import { DelrollupPage } from '../pages/delrollup/delrollup';
 import {Sochome2Page} from '../pages/sochome2/sochome2';
-
-
+import { SocresultsPage } from '../pages/socresults/socresults';
+import { SocLeaderBoardPage } from '../pages/soc-leader-board/soc-leader-board';
 @NgModule({
   declarations: [
     MyApp,
@@ -76,7 +76,10 @@ import {Sochome2Page} from '../pages/sochome2/sochome2';
     RollupPage,
     EditrollupPage,
     DelrollupPage,
-    Sochome2Page
+    Sochome2Page,
+    SocresultsPage,
+    SocLeaderBoardPage
+    
      ],
      
   imports: [
@@ -123,7 +126,9 @@ import {Sochome2Page} from '../pages/sochome2/sochome2';
     RollupPage,
     EditrollupPage,
     DelrollupPage,
-    Sochome2Page
+    Sochome2Page,
+    SocresultsPage,
+    SocLeaderBoardPage
     
   ],
   providers: [

@@ -1,18 +1,56 @@
-<!--
-  Generated template for the SocresultsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
+ <ion-header>
   <ion-navbar>
-    <ion-title>socresults</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Results</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+      <div align="center" class="bar bar-loading bar-assertive top-bar">
+      <span >
+        <h3>{{day}} {{time}} Results</h3> </span>
+       </div>
+    <div >
+      <style>
+table.weeks, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+}
+table.weeks tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table.weeks tr:nth-child(even) {
+  background-color: #ffffff;
+}
+</style>
 
-</ion-content>
+ <div >
+
+    <table class="weeks" style="width:100%">
+            <tr>
+                <th>Name</th>
+                <th>Wk {{ddate -3}} </th>
+                <th>Wk {{ddate -2}}</th>
+                <th>Wk {{ddate -1}}</th>
+                <th>Wk {{ddate}}</th>
+            </tr>
+            <tr *ngFor="let score of S | orderBy: 'Player':false">
+                <td style="text-align:left">{{score.Player}}</td>
+                <td>{{score.Week4}}</td>
+                <td>{{score.Week3}}</td>
+                <td>{{score.Week2}}</td>
+                <td>{{score.Week1}}</td>
+            </tr>
+     </table>
+          </div>
+
+        </div>
+       <button ion-button color="primary" full (click)="leaderBoard()">Leader Board</button>
+
+    </ion-content>
+

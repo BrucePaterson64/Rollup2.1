@@ -7,6 +7,7 @@ import { CardPage } from '../pages/card/card';
 import { CoursesPage } from '../pages/courses/courses';
 import { PlayersPage } from '../pages/players/players';
 import { ResultsPage } from '../pages/results/results';
+import { SocresultsPage } from '../pages/socresults/socresults';
 import { GpsPage } from '../pages/gps/gps';
 import { ListPage } from '../pages/list/list';
 import { LoginPage } from '../pages/login/login';
@@ -50,7 +51,7 @@ export class MyApp {
       { title: 'Courses', component: SocietiesPage },
       { title: 'GPS Yardage', component: GpsPage },
       { title: 'Players', component: SocplayersPage },
-      { title: 'Results', component: ResultsPage },
+      { title: 'Results', component: SocresultsPage },
       { title: 'Roll Ups', component: RollupPage },
       { title: 'Score Card', component: SocCardPage },
       { title: 'LogIn', component: SocloginPage }
