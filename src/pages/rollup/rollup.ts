@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MenuController } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {Http, Headers} from '@angular/http';
-import {SocHomePage } from '../soc-home/soc-home'; 
+import {Sochome2Page } from '../sochome2/sochome2'; 
 @IonicPage()
 @Component({
   selector: 'page-rollup',
@@ -40,7 +40,7 @@ this.http.get('http://golf-rollup.co.uk/selectAllRollups.php?Player='+this.name,
 })
 }
 useRollup(p) {
-this.navCtrl.setRoot(SocHomePage, {
+this.navCtrl.setRoot(Sochome2Page, {
   namec: p.Club,
   namet : p.Time,
   named : p.Day

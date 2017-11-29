@@ -45,7 +45,7 @@ import { EditCoursePage } from '../pages/edit-course/edit-course';
 import { RollupPage } from '../pages/rollup/rollup';
 import { EditrollupPage } from '../pages/editrollup/editrollup';
 import { DelrollupPage } from '../pages/delrollup/delrollup';
-
+import {Sochome2Page} from '../pages/sochome2/sochome2';
 
 
 @NgModule({
@@ -75,7 +75,8 @@ import { DelrollupPage } from '../pages/delrollup/delrollup';
     EditCoursePage,
     RollupPage,
     EditrollupPage,
-    DelrollupPage
+    DelrollupPage,
+    Sochome2Page
      ],
      
   imports: [
@@ -121,7 +122,8 @@ import { DelrollupPage } from '../pages/delrollup/delrollup';
     EditCoursePage,
     RollupPage,
     EditrollupPage,
-    DelrollupPage
+    DelrollupPage,
+    Sochome2Page
     
   ],
   providers: [
