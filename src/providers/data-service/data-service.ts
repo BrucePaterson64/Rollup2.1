@@ -217,6 +217,8 @@ if (this.dataC) {
  })  
 
 }
+
+
 loadCourseRU() {
 if (this.dataC) {
     return Promise.resolve(this.dataC);

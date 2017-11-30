@@ -4,6 +4,7 @@ import { MenuController } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {Http, Headers} from '@angular/http';
 import {Sochome2Page } from '../sochome2/sochome2'; 
+import { EditrollupPage } from '../editrollup/editrollup';
 @IonicPage()
 @Component({
   selector: 'page-rollup',
@@ -47,7 +48,7 @@ this.navCtrl.setRoot(Sochome2Page, {
 })
 }
 editRollup() {
-console.log("Editing");
+this.navCtrl.push(EditrollupPage);
 }
 
 removeRollup() {
