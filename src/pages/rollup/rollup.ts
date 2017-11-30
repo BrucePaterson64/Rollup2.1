@@ -45,8 +45,13 @@ this.navCtrl.setRoot(Sochome2Page, {
   namet : p.Time,
   named : p.Day
 })
+}
+editRollup() {
+console.log("Editing");
+}
 
-
+removeRollup() {
+console.log("Removing");
 }
   ionViewDidLoad() {
     this.menuCtrl.enable(true, 'menu2');

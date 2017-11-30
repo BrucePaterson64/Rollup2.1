@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SocsettingsPage } from '../socsettings/socsettings';
+import { SocietiesPage } from '../societies/societies';
 import {Http, Headers} from '@angular/http';
 import { MenuController } from 'ionic-angular';
+
 @IonicPage()
 @Component({
-  selector: 'page-add-course',
-  templateUrl: 'add-course.html',
+  selector: 'page-socaddcourse',
+  templateUrl: 'socaddcourse.html',
 })
-export class AddCoursePage {
+export class SocaddcoursePage {
+
 NewCourse; NewCourseTown; j1; j2; j3; j4; j5; j6; j7; j8; j9; j10; j11; j12; j13; j14; j15; j16; j17; j18; h1; h2; h3; h4; h5; h6; h7; h8; h9; h10; h11; h12; h13; h14; h15; h16; h17; h18;
   constructor(public navCtrl: NavController, public navParams: NavParams,public http: Http, public menuCtrl: MenuController) {
   }
@@ -18,12 +20,12 @@ this.http.get('http://golf-rollup.co.uk/aAppInsert.php?course='+this.NewCourse+'
     .subscribe(data => {
     console.log("success");
    });
-   this.navCtrl.push(SocsettingsPage);
+   this.navCtrl.push(SocietiesPage);
     }
   
   ionViewDidLoad() {
-   this.menuCtrl.enable(false, 'menu2');
-   this.menuCtrl.enable(true, 'menu1');
+  this.menuCtrl.enable(true, 'menu2');
+  this.menuCtrl.enable(false, 'menu1');
   }
 
 }

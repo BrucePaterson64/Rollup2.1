@@ -16,8 +16,8 @@ rollup.html
     <ion-item-sliding *ngFor="let p of res" >
         <ion-item (click)="useRollup(p)">{{p.Day}} - {{p.Time}} - (Tap to use)<ion-icon name="arrow-back" item-right></ion-icon></ion-item>
             <ion-item-options >
-            <button ion-button color="primary" (click)="editPlayer(person)">Edit</button>
-            <button ion-button color="danger" (click)="removePlayer(person)">Delete</button>
+            <button ion-button color="primary" (click)="editRollup(p)">Edit</button>
+            <button ion-button color="danger" (click)="removeRollup(p)">Delete</button>
       </ion-item-options>
 
     </ion-item-sliding>

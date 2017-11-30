@@ -1,0 +1,42 @@
+ <ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add a Course</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<div align="center"><br>
+<table style="font-size:20px; border:solid 1px;">
+<tr style="border: solid 1px; background-color:#FFF;"><td colspan="7"><input [(ngModel)]="NewCourse" style="width:100%" type="text" placeholder="   --  Enter a Golf Course  --"> </td></tr>
+<tr style="border: solid 1px; background-color:#FFF;"><td colspan="7"><input [(ngModel)]="NewCourseTown" style="width:100%" type="text" placeholder="   --  Enter Town of Course  --"> </td></tr>
+<tr align="center" style="background:white" ><td align="left">Hole</td><td  style="width:50px; background:LightCoral">Index:</td><td style="width:50px; background:#FAFC8F">Par:</td><td style="width:5px; background:grey"></td><td align="left">Hole</td><td style="width:50px; background:lightcoral">Index:</td><td style="width:50px; background:#FAFC8F">Par:</td></tr>
+
+<tr align="center" style="border: solid 1px;background:white"><td style="width:25px">1</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j1"></td><td  style="width:50px; background:#FAFC8F"><input type="number" size="2" style="width:45px; background:#FAFC8F" placeholder="" [(ngModel)]="h1"></td><td style="width:5px; background:grey"></td><td  style="width:25px">10</td><td   style="width:50px; background:LightCoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j10"></td><td   style="width:50px ; background:#FAFC8F"><input type="number" size="3" style="width:45px ; background:#FAFC8F" placeholder="{{h10}}" [(ngModel)]="h10"></td></tr>
+
+<tr align="center" style="border: solid 1px;background:white"><td>2</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j2"></td><td  style="width:50px; background:#FAFC8F"><input type="number" size="2" style="width:45px; background:#FAFC8F" placeholder="{{h2}}" [(ngModel)]="h2"></td><td style="background:grey"></td><td>11</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j11"></td><td   style="width:50px ; background:#FAFC8F"><input type="number" size="3" style="width:45px ; background:#FAFC8F" placeholder="{{h11}}" [(ngModel)]="h11"></td></tr>
+
+<tr align="center" style="border: solid 1px;background:white"><td>3</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j3"></td><td  style="width:50px; background:#FAFC8F"><input type="number" size="2" style="width:45px; background:#FAFC8F" placeholder="{{h3}}" [(ngModel)]="h3"></td><td style="background:grey"></td><td>12</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j12"></td><td   style="width:50px ; background:#FAFC8F"><input type="number" size="3" style="width:45px ; background:#FAFC8F" placeholder="{{h12}}" [(ngModel)]="h12"></td></tr>
+
+	<tr align="center" style="border: solid 1px;background:white"><td>4</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j4"></td><td  style="width:50px; background:#FAFC8F"><input type="number" size="2" style="width:45px; background:#FAFC8F" placeholder="{{h4}}" [(ngModel)]="h4"></td><td style="background:grey"></td><td>13</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j13"></td><td   style="width:50px ; background:#FAFC8F"><input type="number" size="3" style="width:45px ; background:#FAFC8F" placeholder="{{h13}}" [(ngModel)]="h13"></td></tr>
+
+	<tr align="center" style="border: solid 1px;background:white"><td>5</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j5"></td><td  style="width:50px; background:#FAFC8F"><input type="number" size="2" style="width:45px; background:#FAFC8F" placeholder="{{h5}}" [(ngModel)]="h5"></td><td style="background:grey"></td><td>14</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j14"></td><td   style="width:50px ; background:#FAFC8F"><input type="number" size="3" style="width:45px ; background:#FAFC8F" placeholder="{{h14}}" [(ngModel)]="h14"></td></tr>
+
+	<tr align="center" style="border: solid 1px;background:white"><td>6</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j6"></td><td  style="width:50px; background:#FAFC8F"><input type="number" size="2" style="width:45px; background:#FAFC8F" placeholder="{{h6}}" [(ngModel)]="h6"></td><td style="background:grey"></td><td>15</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j15"></td><td   style="width:50px ; background:#FAFC8F"><input type="number" size="3" style="width:45px ; background:#FAFC8F" placeholder="{{h15}}" [(ngModel)]="h15"></td></tr>
+
+	<tr align="center" style="border: solid 1px;background:white"><td>7</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j7"></td><td  style="width:50px; background:#FAFC8F"><input type="number" size="2" style="width:45px; background:#FAFC8F" placeholder="{{h7}}" [(ngModel)]="h7"></td><td style="background:grey"></td><td>16</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j16"></td><td   style="width:50px ; background:#FAFC8F"><input type="number" size="3" style="width:45px ; background:#FAFC8F" placeholder="{{h16}}" [(ngModel)]="h16"></td></tr>
+
+    <tr  align="center"style="border: solid 1px;background:white"><td >8</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j8"></td><td  style="width:50px; background:#FAFC8F"><input type="number" size="2" style="width:45px; background:#FAFC8F" placeholder="{{h8}}" [(ngModel)]="h8"></td><td style="background:grey"></td><td>17</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j17"></td><td   style="width:50px ; background:#FAFC8F"><input type="number" size="3" style="width:45px ; background:#FAFC8F" placeholder="{{h17}}" [(ngModel)]="h17"></td></tr>
+
+	<tr align="center" style="border: solid 1px;background:white"><td>9</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j9"></td><td  style="width:50px; background:#FAFC8F"><input type="number" size="2" style="width:45px; background:#FAFC8F" placeholder="{{h9}}" [(ngModel)]="h9"></td><td style="background:grey"></td><td>18</td><td style="width:50px; background:lightcoral "><input type="number" size="3" style="width:45px; background:LightCoral" placeholder="" [(ngModel)]="j18"></td><td   style="width:50px ; background:#FAFC8F"><input type="number" size="3" style="width:45px ; background:#FAFC8F" placeholder="{{h18}}" [(ngModel)]="h18"></td></tr>
+
+	<tr><td colspan="7" style="width:80px ; background:#FAFC8F"><span>Course Par: &nbsp;&nbsp; </span></td></tr>
+</table>
+</div>
+    <div class="title" ><button ion-button full (click)="subCourse()">SUBMIT COURSE</button></div>
+
+</ion-content>
+

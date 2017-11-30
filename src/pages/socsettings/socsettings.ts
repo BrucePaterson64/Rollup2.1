@@ -6,6 +6,7 @@ import {Storage} from '@ionic/storage';
 import { Http } from '@angular/http';
 import { AuthService } from '../../providers/auth-service/auth-service';
 import { CoursesPage } from '../courses/courses';
+import { AddCoursePage } from '../add-course/add-course';
 @IonicPage()
 @Component({
   selector: 'page-socsettings',
@@ -40,7 +41,10 @@ loadCourses() {
 console.log(this.course);
   });
     }
+addCourse() {
+this.navCtrl.push(AddCoursePage)
 
+}
   showAlert() {
 
  let alert = this.alertCtrl.create({
