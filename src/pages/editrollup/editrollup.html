@@ -18,7 +18,7 @@
     <BR>
  <ion-item class="item-select item-input" >
        <ion-label class="input-text">Course:</ion-label>
-     <ion-select [(ngModel)]="selectedClub"><ion-option ng-change="update()" *ngFor="let Club of course" >{{Club.Club}}</ion-option></ion-select>
+     <ion-select [(ngModel)]="selectedClub" ><ion-option ng-change="update()" *ngFor="let Club of course" >{{Club.Club}}</ion-option></ion-select>
 </ion-item>
     <ion-item class="item-select item-input" >
        <ion-label class="input-text">Day:</ion-label>
@@ -26,7 +26,7 @@
 </ion-item>
     <ion-item class="item-select item-input" >
        <ion-label class="input-text">Time:</ion-label>
-     <ion-select [(ngModel)]="selectedTime"><ion-option ng-change="update()" *ngFor="let t of time " >{{t.TeeTime}}</ion-option></ion-select>
+     <ion-select [(ngModel)]="selectedTime"><ion-option ng-change="update()" *ngFor="let t of time | orderBy: 'TeeTime':false " >{{t.TeeTime}}</ion-option></ion-select>
 </ion-item>
         <br>
    <button ion-button color="primary" full (click)="subRollup()">Submit Changes</button>
