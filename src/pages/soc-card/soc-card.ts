@@ -114,7 +114,7 @@ showAlert() {
 
   const toast = this.toastCtrl.create({
     message: 'Please select HANDICAP!',
-    duration: 1000,
+    duration: 2000,
     position: 'middle'
   });
 
@@ -352,6 +352,7 @@ if(nPoints > 36 && (parseFloat(nHcp) > 20.4) && shots > K)
 ionViewDidLoad()
 
       { 
+      
   this.items = ['1','2','3','4','5','6','7','8','9','10','11','12'];
 console.log('ionViewDidLoad CardPage');
   }  

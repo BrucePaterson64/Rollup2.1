@@ -15,8 +15,9 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 ion-content {
-    background-image: url('/assets/img/shot.jpg');
+    background-image: url('../assets/img/shot.jpg');
     background-repeat: no-repeat;
+    background-size: auto;
 }
 .no-scroll .scroll-content{
      overflow: hidden;

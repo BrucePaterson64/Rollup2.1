@@ -49,7 +49,8 @@ import {Sochome2Page} from '../pages/sochome2/sochome2';
 import { SocresultsPage } from '../pages/socresults/socresults';
 import { SocLeaderBoardPage } from '../pages/soc-leader-board/soc-leader-board';
 import { AddCoursePage } from '../pages/add-course/add-course';
-
+import { SocaddcoursePage } from '../pages/socaddcourse/socaddcourse';
+import { Keyboard } from '@ionic-native/keyboard';
 @NgModule({
   declarations: [
     MyApp,
@@ -81,7 +82,8 @@ import { AddCoursePage } from '../pages/add-course/add-course';
     Sochome2Page,
     SocresultsPage,
     SocLeaderBoardPage,
-    AddCoursePage
+    AddCoursePage,
+    SocaddcoursePage
     
      ],
      
@@ -132,7 +134,8 @@ import { AddCoursePage } from '../pages/add-course/add-course';
     Sochome2Page,
     SocresultsPage,
     SocLeaderBoardPage,
-    AddCoursePage
+    AddCoursePage,
+    SocaddcoursePage
     
   ],
   providers: [
@@ -143,7 +146,8 @@ import { AddCoursePage } from '../pages/add-course/add-course';
     AuthService,
     DataServiceProvider,
     ResultsServiceProvider,
-    CalcServiceProvider
+    CalcServiceProvider,
+    Keyboard
     
 
   ]

@@ -3,7 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {DataServiceProvider} from '../../providers/data-service/data-service';
 import { EditCoursePage } from '../edit-course/edit-course';
-import { AddCoursePage } from '../add-course/add-course';
+import { SocaddcoursePage } from '../socaddcourse/socaddcourse';
+import { MenuController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -16,7 +17,7 @@ export class SocietiesPage {
 	society : any ;
 	//toggleStatus: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataServiceProvider, public storage : Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataServiceProvider, public storage : Storage, public menuCtrl: MenuController) {
  this.loadCourses();
     }
 
@@ -38,10 +39,11 @@ editCourse(d) {
 }
 newCourse() {
 
-this.navCtrl.push(AddCoursePage)
+this.navCtrl.push(SocaddcoursePage)
 }
   ionViewDidLoad() {
-   
+   this.menuCtrl.enable(true, 'menu2');
+   this.menuCtrl.enable(false, 'menu1');
 
 	 }  
 

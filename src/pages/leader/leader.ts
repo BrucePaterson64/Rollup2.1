@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
 
-import { OrderModule } from 'ngx-order-pipe';
+//import { OrderModule } from 'ngx-order-pipe';
 
 
 @IonicPage()

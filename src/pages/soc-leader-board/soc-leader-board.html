@@ -31,7 +31,7 @@ table.leaderboard tr:nth-child(even) {
 <table class="leaderboard" style="width:100%" >
 	<tr><th>Name</th><th>Score  </th><th>Hcp  </th><th>Revised Hcp</th></tr>
 
-  <tr *ngFor="let Score of scores | orderBy: '-Score '  ">
+  <tr *ngFor="let Score of scores | orderBy: 'Score':false">
           <td style="text-align:left">{{Score.Player}}</td>
           <td>{{Score.Score}}</td>
           <td>{{Score.Hcp}}</td>

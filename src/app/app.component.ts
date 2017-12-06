@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, NavController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Keyboard } from '@ionic-native/keyboard';
 import { HomePage } from '../pages/home/home';
 import { CardPage } from '../pages/card/card';
 import { CoursesPage } from '../pages/courses/courses';
@@ -21,6 +22,9 @@ import {SocplayersPage} from '../pages/socplayers/socplayers';
 //import * as moment from 'moment/moment';
 import { SocietiesPage } from '../pages/societies/societies';
 import { RollupPage } from '../pages/rollup/rollup';
+
+
+
 @Component({
   templateUrl: 'app.html'
   
@@ -64,7 +68,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      
+      //Keyboard.hideKeyboardAccessoryBar(false);
     });
   }
 
