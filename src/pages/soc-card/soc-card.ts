@@ -5,7 +5,7 @@ import {Http, Headers} from '@angular/http';
 import {DataServiceProvider} from '../../providers/data-service/data-service';
 import {CoursesPage} from '../courses/courses';
 import { ToastController, AlertController } from 'ionic-angular';
-import {ResultsPage} from '../results/results';
+import {SocresultsPage} from '../socresults/socresults';
 import moment from 'moment';
 
 @IonicPage()
@@ -340,7 +340,7 @@ if(nPoints > 36 && (parseFloat(nHcp) > 20.4) && shots > K)
           handler: () => {
           this.http.get ('http://golf-rollup.co.uk/aAppSubmitScores.php?Club='+ this.Club + '&Player='+ this.selectedPlayer +'&Day='+ this.day +'&Time='+ this.time +'&Pts='+ this.totPts +'&yrwk='+ yrwk +'&Hcp='+ this.selectedHcp +'&RevHcp='+ RrevHcp,"")
           .subscribe(res => {
-          this.navCtrl.push(ResultsPage, {society: this.society});
+          this.navCtrl.push(SocresultsPage, {club: this.club});
                 })
             }
         }]

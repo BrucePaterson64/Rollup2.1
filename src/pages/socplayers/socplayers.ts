@@ -29,8 +29,8 @@ export class SocplayersPage {
     time: any;
 	
   constructor( public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public http: Http, public dataService: DataServiceProvider, public menuCtrl: MenuController) {
-	
-    this.loadPlayers();
+	this.loadPlayers();
+    
 
   	this.storage.get('day').then((day) => {
     this.day = day;
@@ -84,6 +84,7 @@ this.navCtrl.push(SocAddPlayerPage);
 }
 
 ionViewDidLoad() {
+    this.loadPlayers();
      this.menuCtrl.enable(true, 'menu2');
     this.menuCtrl.enable(false, 'menu1');
   }

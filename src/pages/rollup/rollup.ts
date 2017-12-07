@@ -20,6 +20,16 @@ name; res; club; data; Club; namec; named; namet;
   this.Club = val;
     });
   }
+    doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    
+   this.loadData();
+    
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 1000);
+  }
 loadData() {
 this.storage.get('name').then((name) => {
 this.name = name;

@@ -2,28 +2,28 @@ page-soc-leader-board {
 h3 {
 color:yellow;
     }
- .win1 {
+.win1 {
 color:red;
 font-weight:bold;
     }
 .win11 {
  color:black;
 }
-    .win2 {
+.win2 {
 color:red;
 font-weight:bold;
     }
 .win22 {
  color:black;
 }
-    .win3 {
+.win3 {
 color:red;
 font-weight:bold;
     }
 .win33 {
  color:black;
 }
-    .win4 {
+.win4 {
 color:red;
 font-weight:bold;
     }
@@ -31,14 +31,14 @@ font-weight:bold;
  color:black;
 }
 
-    .win5 {
+.win5 {
 color:red;
 font-weight:bold;
     }
 .win55 {
  color:black;
 }
-    .win6 {
+.win6 {
 color:red;
 font-weight:bold;
 
@@ -46,6 +46,21 @@ font-weight:bold;
 .win66 {
  color:black;
 }
+ table.leaderboard, th , td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+  text-align: center;
+}
+table.leaderboard tr:nth-child(odd) {
+  background-color: #f1f1f1;
+}
+table.leaderboard tr:nth-child(even) {
+  background-color: #ffffff;
+}
+ion-content {
+background-color: transparent !important;
+    }
 }
 
 

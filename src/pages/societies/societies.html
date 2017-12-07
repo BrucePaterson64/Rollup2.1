@@ -12,13 +12,15 @@
 
 <ion-content padding>
     <div align="center">  <h3>Add a Golf Course -> <label><ion-icon item-end name="add-circle" (click)="newCourse()"></ion-icon></label></h3></div>
-    <ion-item-sliding  *ngFor="let d of course" >
-    <ion-label>{{d.Club}} </ion-label>
-    <ion-item-options>
-            <button ion-button color="primary" (click)="editPlayer(person)">Edit</button>
-     </ion-item-options>
-     </ion-item-sliding>
 
+<ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
     <ion-list>
 
     <ion-item-sliding *ngFor="let d of course" >

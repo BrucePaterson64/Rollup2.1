@@ -3,7 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {Http, Headers} from '@angular/http';
-import {Nav, NavController } from 'ionic-angular';
+import {Nav, NavController, AlertController } from 'ionic-angular';
 import {Events} from 'ionic-angular';
 import { SocHomePage } from '../../pages/soc-home/soc-home';
 import { SocCardPage } from '../../pages/soc-card/soc-card';
@@ -12,6 +12,7 @@ import { RegistrationPage } from '../../pages/registration/registration';
 import { SocRegisterPage } from '../../pages/soc-register/soc-register';
 import {App} from 'ionic-angular';
 import {Storage} from '@ionic/storage';
+
 
 export class User {
 
@@ -42,7 +43,7 @@ export class User {
 export class AuthService {
 @ViewChild('Nav') nav: Nav;
  cl; club; time; day; name; player;
-  constructor(public http: Http, private app: App, private storage: Storage){
+  constructor(public http: Http, private app: App, private storage: Storage, private alertCtrl: AlertController){
    
   }
   
@@ -67,20 +68,18 @@ export class AuthService {
          }); 
         this.storage.set('password', credentials.password).then(() => {
           });
-        
-           
+                 
         nav.setRoot(CoursesPage);
       } else {
 
-      alert("No records found! Please Register");
-        nav.push(RegistrationPage); 
+      //alert("No records found! Please Register");
+       // nav.push(RegistrationPage); 
       }
        }, (err) => {
       alert("failed");
       
       });
-      
-                 
+                     
         let access = (credentials.password === credentials.password && credentials.email === credentials.email);
         let currentUser =  ('email:'+credentials.email + ', password:' + credentials.password );
         console.log(credentials.email);
@@ -92,6 +91,7 @@ export class AuthService {
   };
   
   public soclogin(socCredentials) {
+  console.log("SOCLOGIN");
   let nav = this.app.getActiveNav();
   console.log("logging in");
     if (socCredentials.email === null || socCredentials.password === null) {
@@ -102,6 +102,7 @@ export class AuthService {
         .map(res => res.json())
         .subscribe(res => {
         if (res === 1) {
+        
         observer.next(res);
         observer.complete();
         this.storage.set('email', socCredentials.email).then(() => {
@@ -130,7 +131,7 @@ export class AuthService {
          })
            
         } else {
-
+        this.showPopup ("NO RECORDS FOUND!", "Please try again!");
       //nav.push(SocRegisterPage); 
       }
        }, (err) => {
@@ -149,6 +150,21 @@ export class AuthService {
     }
   };
   
+    showPopup(title, text) {
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: text,
+      buttons: [
+        {
+          text: 'OK',
+          handler: data => {
+           
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
   public setting(set) {
   return Observable.create(observer => {
   this.http.get('http://golf-rollup.co.uk/society/appSettings.php?shots='+set.shots+'&adjhcp='+set.adjHcp+'&club='+set.society+'&Course1='+set.selectedClub1+'&Course2='+set.selectedClub2+'&Course3='+set.selectedClub3+'&Course4='+set.selectedClub4+'&Course5='+set.selectedClub5+'&Course6='+set.selectedClub6+'&yr='+set.year, "")

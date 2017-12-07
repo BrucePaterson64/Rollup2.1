@@ -51,6 +51,9 @@ import { SocLeaderBoardPage } from '../pages/soc-leader-board/soc-leader-board';
 import { AddCoursePage } from '../pages/add-course/add-course';
 import { SocaddcoursePage } from '../pages/socaddcourse/socaddcourse';
 import { Keyboard } from '@ionic-native/keyboard';
+import { AddtimePage} from '../pages/addtime/addtime';
+import { AddclubPage} from '../pages/addclub/addclub';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -83,7 +86,9 @@ import { Keyboard } from '@ionic-native/keyboard';
     SocresultsPage,
     SocLeaderBoardPage,
     AddCoursePage,
-    SocaddcoursePage
+    SocaddcoursePage,
+    AddclubPage,
+    AddtimePage
     
      ],
      
@@ -135,7 +140,9 @@ import { Keyboard } from '@ionic-native/keyboard';
     SocresultsPage,
     SocLeaderBoardPage,
     AddCoursePage,
-    SocaddcoursePage
+    SocaddcoursePage,
+    AddclubPage,
+    AddtimePage
     
   ],
   providers: [

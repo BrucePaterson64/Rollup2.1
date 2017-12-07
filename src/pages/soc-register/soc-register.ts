@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, IonicPage } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service/auth-service';
 import { CardPage} from '../card/card'; 
-
+import { AddtimePage} from '../addtime/addtime';
+import { AddclubPage} from '../addclub/addclub';
+import { Http } from '@angular/http';
 @IonicPage()
 @Component({
   selector: 'page-soc-register',
@@ -11,8 +13,9 @@ import { CardPage} from '../card/card';
 export class SocRegisterPage {
   createSuccess = false;
   socRegisterCredentials = { email: '', password: '', name: '', club: '', day: '', time: '', hcp: '' };
- 
-  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController) { }
+ public course; time; days;
+  constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, public http: Http) {
+   }
  
   public socRegister() {
 
@@ -47,4 +50,30 @@ export class SocRegisterPage {
     });
     alert.present();
   }
+  
+  ngOnInit() {
+  
+     this.http.get('http://golf-rollup.co.uk/aAppCourse.php',"")
+    .map(response => response.json())
+    .subscribe(data => {
+    this.course = data;
+   
+      console.log(this.course);
+   });
+   this.http.get('http://golf-rollup.co.uk/aAppTimes.php',"")
+    .map(response => response.json())
+    .subscribe(data => {
+    this.time = data;
+   
+      console.log(this.time);
+   });
+   this.days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+  }
+  addTime() {
+  this.nav.setRoot(AddtimePage);
+  }
+  addClub() {
+  this.nav.setRoot(AddclubPage);
+  }
 }
+

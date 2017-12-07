@@ -17,15 +17,15 @@ export class SocloginPage {
 
   }
  
-  public soclogin() {
+  soclogin() {
     this.showLoading()
    
     console.log( this.socRegisterCredentials);
     this.auth.soclogin(this.socRegisterCredentials).subscribe(allowed => {
     console.log(this.socRegisterCredentials);
       if (allowed) {
-
-       //this.navCtrl.setRoot('CardPage');
+console.log("ALLOWED");
+       //this.navCtrl.setRoot('SocCardPage');
       } else {
       this.showError("Access Denied");
       }
@@ -34,17 +34,19 @@ export class SocloginPage {
       this.showError(error);
       });
   };
+  
   public socCreateAccount() {
-    this.navCtrl.push('SocRegisterPage');
+  this.navCtrl.push('SocRegisterPage');
   };
 
   showLoading() {
     this.loading = this.loadingCtrl.create({
-      content: 'Please wait...',
-      dismissOnPageChange: true
-      
+      content: 'Please wait ...',
+      dismissOnPageChange: true,
+      duration: 2000
     });
   this.loading.present();
+  
   };
  
   showError(text) {

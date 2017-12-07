@@ -14,48 +14,30 @@
         <ion-col>
           <ion-list inset>
             <ion-item>
-
               <ion-input type="text" placeholder="NAME" name="name" [(ngModel)]="socRegisterCredentials.name" required></ion-input>
             </ion-item>
             <ion-item>
-
-              <ion-input type="text" placeholder="EMAIL" name="email" [(ngModel)]="socRegisterCredentials.email" required></ion-input>
+            <ion-input type="text" placeholder="EMAIL" name="email" [(ngModel)]="socRegisterCredentials.email" required></ion-input>
             </ion-item>
-
-            <ion-item>
-
+              <ion-item>
               <ion-input type="password" placeholder="PASSWORD" name="password" [(ngModel)]="socRegisterCredentials.password" required></ion-input>
-            </ion-item>
-
+              </ion-item>
+                <ion-item><ion-select class="maxwidth" placeholder="GOLF CLUB" name="club" [(ngModel)]="socRegisterCredentials.club" required><ion-option  *ngFor="let c of course" value="{{c.Club}}" >{{c.Club}}</ion-option></ion-select></ion-item>
+                <ion-item><ion-select class="maxwidth" placeholder="ROLL UP DAY" name="day" [(ngModel)]="socRegisterCredentials.day" required><ion-option  *ngFor="let d of days" value="{{d}}" >{{d}}</ion-option></ion-select></ion-item>
+              <ion-item><ion-select class="maxwidth" placeholder="ROLL UP TIME" name="time" [(ngModel)]="socRegisterCredentials.time" required><ion-option  *ngFor="let t of time" value="{{t.TeeTime}}" >{{t.TeeTime}}</ion-option></ion-select></ion-item>
             <ion-item>
-
-              <ion-input type="text" placeholder="GOLF CLUB" name="club" [(ngModel)]="socRegisterCredentials.club" required></ion-input>
+            <ion-input type="text" placeholder="CURRENT HANDICAP" name="hcp" [(ngModel)]="socRegisterCredentials.hcp" required></ion-input>
             </ion-item>
-              <ion-item>
-
-              <ion-input type="text" placeholder="ROLL UP DAY" name="day" [(ngModel)]="socRegisterCredentials.day" required></ion-input>
-            </ion-item>
-
-              <ion-item>
-
-              <ion-input type="text" placeholder="ROLL UP TIME" name="time" [(ngModel)]="socRegisterCredentials.time" required></ion-input>
-            </ion-item>
-              <ion-item>
-
-              <ion-input type="text" placeholder="CURRENT HANDICAP" name="hcp" [(ngModel)]="socRegisterCredentials.hcp" required></ion-input>
-            </ion-item>
-
-          </ion-list>
+        </ion-list>
         </ion-col>
       </ion-row>
-
       <ion-row>
         <ion-col class="signup-col">
           <button ion-button color="primary" full type="submit" [disabled]="!socRegisterForm.form.valid">Register</button>
         </ion-col>
       </ion-row>
-
     </form>
+      <div align="center"><p>If your Golf Club or Playing Time is not listed</p><p> please add it here:</p><button ion-button color="secondary" (click)="addClub()">Add a  Club</button> - <button ion-button color="secondary" (click)="addTime()">Add a Time</button></div>
   </div>
 </ion-content>
 

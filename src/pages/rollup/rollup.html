@@ -10,7 +10,14 @@ rollup.html
 
 
 <ion-content padding>
-
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
   <ion-list>
    <div align="center"><h3>My Roll Ups:</h3></div>
     <ion-item-sliding *ngFor="let p of res" >

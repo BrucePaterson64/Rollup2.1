@@ -29,10 +29,11 @@
       <ion-row>
         <ion-col class="signup-col">
           <button ion-button color="primary" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
-          <button ion-button color="primary" full (click)="createAccount()">Create New Account</button>
+
         </ion-col>
       </ion-row>
 
     </form>
+      <button ion-button color="primary" full (click)="createAccount()">Create New Account</button>
   </div>
 </ion-content>

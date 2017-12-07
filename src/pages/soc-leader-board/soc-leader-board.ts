@@ -58,7 +58,7 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
         this.scores = (res);
    
 });
- });
+});
 });
 });
 });
@@ -66,7 +66,21 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
 });
    
  }
-  
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    
+   this.http.get('http://golf-rollup.co.uk/aAppResults.php?Club='+this.Club+'&DayS='+this.day+'&TeeTime='+this.time+'&Week='+this.Maxdate, "")
+        .map(res => res.json())
+        .subscribe(res => {
+        this.scores = (res);
+   
+});
+    
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 1000);
+  }
   
   ionViewDidLoad() {
     console.log('ionViewDidLoad ResultsPage');

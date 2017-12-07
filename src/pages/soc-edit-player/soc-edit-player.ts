@@ -20,12 +20,14 @@ export class SocEditPlayerPage {
     this.name = navParams.get("name");
    
     this.storage.get('day').then((day) => {
-    this.day = day;
+    this.selected.Day = day;
         });
 
     this.storage.get('time').then((time) => {
-    this.time = time;
+    
+    this.selected.Time = time;
 		});
+ 
     this.storage.get('club').then((club) => {
     this.club = club;
     console.log(this.club);
@@ -34,8 +36,8 @@ export class SocEditPlayerPage {
     	.map(res => res.json())
 		.subscribe(data => {
 		this.data = data[0];
-        this.Hcp = this.data.Hcp;
-		this.RevHcp = this.data.RevHcp;
+        this.selected.Hcp = this.data.Hcp;
+		this.selected.revHcp = this.data.RevHcp;
         this.Club = this.data.Club;
 	
  	 });   

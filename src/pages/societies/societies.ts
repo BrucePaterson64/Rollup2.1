@@ -18,7 +18,7 @@ export class SocietiesPage {
 	//toggleStatus: boolean;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataServiceProvider, public storage : Storage, public menuCtrl: MenuController) {
- this.loadCourses();
+    this.loadCourses();
     }
 
 loadCourses() {
@@ -37,6 +37,16 @@ editCourse(d) {
 });
 
 }
+doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    
+   this.loadCourses();
+    
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 1000);
+  }
 newCourse() {
 
 this.navCtrl.push(SocaddcoursePage)
@@ -44,6 +54,7 @@ this.navCtrl.push(SocaddcoursePage)
   ionViewDidLoad() {
    this.menuCtrl.enable(true, 'menu2');
    this.menuCtrl.enable(false, 'menu1');
+   this.loadCourses();
 
 	 }  
 
