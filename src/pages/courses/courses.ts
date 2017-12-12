@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import {DataServiceProvider} from '../../providers/data-service/data-service';
 import {CardPage} from '../card/card';
+import { MenuController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -14,7 +15,7 @@ export class CoursesPage {
 	society : any ;
 	//toggleStatus: boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataServiceProvider, public storage : Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataServiceProvider, public storage : Storage, public menuCtrl: MenuController) {
  
    //console.log(1);
   
@@ -43,7 +44,8 @@ this.navCtrl.push(CardPage, {
 })
 }
   ionViewDidLoad() {
-   
+    this.menuCtrl.enable(true, 'menu1');
+    this.menuCtrl.enable(false, 'menu2');
 
 	 }  
 

@@ -40,7 +40,11 @@ editCourse(d) {
 doRefresh(refresher) {
     console.log('Begin async operation', refresher);
     
-   this.loadCourses();
+        this.dataService.loadCourseRU()
+     .then(dataC => {
+     this.course = dataC;
+     console.log(this.course);
+    });
     
     setTimeout(() => {
       console.log('Async operation has ended');

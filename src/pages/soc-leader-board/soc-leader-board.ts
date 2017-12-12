@@ -45,6 +45,7 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
         .map(res => res.json())
         .subscribe(res => {
         this.maxdate = res;
+    
         this.storage.set('maxdate', this.maxdate).then(() => {
          }); 
 		

@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title align="center">Add a Tee Time</ion-title>
+    <ion-title align="center"></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -15,6 +15,6 @@
     <table>
         <tr><td><select [(ngModel)]="selectedHour"><option class="opt" *ngFor="let h of hour" >{{h}}</option></select></td><td align="center" style="font-size:50px; width:10px">:</td><td><select [(ngModel)]="selectedMin"><option class="opt" *ngFor="let m of min" >{{m}}</option></select></td></tr>
     </table>
- </div>
+ </div><br>
   <div align="center"><button ion-button full (click)="subTime()">SUBMIT</button></div>
 </ion-content>

@@ -15,6 +15,7 @@ export class SocRegisterPage {
   socRegisterCredentials = { email: '', password: '', name: '', club: '', day: '', time: '', hcp: '' };
  public course; time; days;
   constructor(private nav: NavController, private auth: AuthService, private alertCtrl: AlertController, public http: Http) {
+  
    }
  
   public socRegister() {
@@ -70,10 +71,24 @@ export class SocRegisterPage {
    this.days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
   }
   addTime() {
-  this.nav.setRoot(AddtimePage);
+  this.nav.push(AddtimePage);
   }
   addClub() {
-  this.nav.setRoot(AddclubPage);
+  this.nav.push(AddclubPage);
+  }
+  resetClub() {
+  console.log("RESET");
+  }
+  doRefresh(refresher) {
+    console.log('Begin async operation', refresher);
+    
+   this.ngOnInit()
+      
+    
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 1000);
   }
 }
 
