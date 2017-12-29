@@ -41,14 +41,16 @@ export class GpsPage {
  let addLabel = function(label) 
  {
     labels.push(label);
-    console.log(label);
+    console.log(addLabel);
  } 
  
  let clearLabels = function() 
  {
  console.log("clearing....");
+ console.log(labels);
    while (labels.length) {
     let label = labels[labels.length - 1];
+    console.log(label);
     label.onRemove();
     this.labels.pop();
    }

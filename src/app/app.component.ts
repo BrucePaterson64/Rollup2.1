@@ -65,8 +65,9 @@ export class MyApp {
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
-      this.splashScreen.hide();
-     this.keyboard.hideKeyboardAccessoryBar(false);
+      this.splashScreen.show();
+      this.keyboard.hideKeyboardAccessoryBar(false);
+     
     });
   }
 
