@@ -4,7 +4,7 @@ import { Http } from '@angular/http';
 import {Storage} from '@ionic/storage';
 import { OnInit } from '@angular/core';
 import {LeaderPage} from '../leader/leader';
-
+import { MenuController } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-results',
@@ -20,7 +20,7 @@ winner2:any;
 rd1:any;
 selNoOfCourses: any;
 ww2:any;
-constructor(public navParams: NavParams, public http: Http, public storage: Storage, public nav: NavController) {
+constructor(public navParams: NavParams, public http: Http, public storage: Storage, public nav: NavController, public menuCtrl: MenuController) {
 
  //this.society = navParams.get("society");
 
@@ -35,6 +35,7 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
 	.map(data => data.json())
     .subscribe(data => {
     this.S = (data);
+    console.log(this.S);
     
     this.http.get('http://golf-rollup.co.uk/society/socWinners.php?Club=' + this.society,"")
     
@@ -43,7 +44,7 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
     this.win1 = data;
     let w1 = this.win1.Rd1;    
     console.log(data);
-    console.log(w1);
+    console.log(this.win1.Rd1);
     
    
     
@@ -64,10 +65,11 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
   
   public leaderBoard() {
 
-  this.nav.push(LeaderPage,{society: this.society});
+  this.nav.setRoot(LeaderPage,{society: this.society});
   }
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ResultsPage');
+    this.menuCtrl.enable(true, 'menu1');
+    this.menuCtrl.enable(false, 'menu2');
   }
 
 }

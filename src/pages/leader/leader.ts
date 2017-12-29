@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http } from '@angular/http';
-
+import { MenuController } from 'ionic-angular';
 //import { OrderModule } from 'ngx-order-pipe';
 
 
@@ -14,7 +14,7 @@ import { Http } from '@angular/http';
 export class LeaderPage {
 	society: any;
 	scores: any;
-  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams, public menuCtrl: MenuController) {
   this.society = navParams.get("society");
   }
 ngOnInit() {
@@ -28,7 +28,8 @@ ngOnInit() {
 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LeaderPage');
+    this.menuCtrl.enable(true, 'menu1');
+    this.menuCtrl.enable(false, 'menu2');
   }
 
 }

@@ -49,8 +49,9 @@ font-weight:bold;
  table.leaderboard, th , td {
   border: 1px solid grey;
   border-collapse: collapse;
-  padding: 5px;
+  padding: 2px 0px;
   text-align: center;
+  width: 100%;
 }
 table.leaderboard tr:nth-child(odd) {
   background-color: #f1f1f1;

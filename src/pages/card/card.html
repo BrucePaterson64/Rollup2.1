@@ -7,16 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-
-
-
 <ion-content class="home">
-
-  <ion-list>
-
-  </ion-list>
-
-
 <div align="center" style="height:30px"><h3>{{name.Course}}</h3></div>
 <div layout-align='center center'layout='coloumn' >
 <table style="width:100%">
@@ -28,9 +19,6 @@
       <td class="col5" style="width:20%"><table><tr ><td id="sel11" align="right">Hcp:</td></tr><tr><td  id="sel22">Rev Hcp:</td></tr></table> </td>
       <td class="col5" style="width:20%" ><table><tr><td><select class="text-center" id="sel1" (ngModelChange)="onSelect1()"  font-size="10" [(ngModel)]="selectedHcp"><option  *ngFor="let h of H"  value="{{h.Hcp}}" >{{h.Hcp}}</option></select></td></tr><tr><td><select class="text-center" id="sel2" (ngModelChange)="onSelect2()"  font-size="10" [(ngModel)]="selectedHcp"><option  *ngFor="let rh of H"  value="{{rh.RevHcp}}" >{{rh.RevHcp}}</option></select></td></tr></table> </td>
     </tr>
-
-
-
          <tr class="row header">
            <td class="col">Hole</td>
            <td class="col1">Index</td>
@@ -47,7 +35,6 @@
            <td class="col">{{getShots(par)}}</td>
            <td class="col3" ><select [(ngModel)]="par.sel" (change)="onChangeScore(par.sel)"><option  *ngFor= "let s of items" >{{s}}</option></select></td>
          </tr>
-
         <tr class="row" style="height:32px">
            <td class="col">Total</td>
            <td class="col"></td>
@@ -56,15 +43,9 @@
            <td class="col">{{getTotalShots()}}</td>
            <td class="col">{{getScoreTotal()}}</td>
         </tr>
-
-
 </table>
   <div>
    <button ion-button color="primary" full (click)="submitResult()">Submit Result</button>
   </div>
 </div>
-
-
-
-
 </ion-content>

@@ -1,18 +1,19 @@
-
-<ion-header>
-
+ <ion-header>
   <ion-navbar>
-    <ion-title>Leader Board</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+      <ion-title>Leader Board</ion-title>
   </ion-navbar>
-
-</ion-header>
+</ion-header>>
 
 
 <ion-content padding>
 <div class="bar bar-loading bar-assertive top-bar">
 			<div align="center">
-				<h3>{{society}}'s Results </h3></div>
-	     </div><br><br>
+				<h3>{{society}}'s Leader Board </h3>
+                <h4>(Penalty shots are NOT included!)</h4></div>
+	     </div>
 	  <div>
 <style>
 table.leaderboard, th , td {
@@ -30,14 +31,14 @@ table.leaderboard tr:nth-child(even) {
 </style>
 <div ng-init="getLeaders()">
 <table class="leaderboard" style="width:100%" >
-	<tr><th>Name</th><th>Score  </th><th>Hcp  </th><th>New Hcp</th><th>Penalty</th></tr>
+	<tr><th>Name</th><th>Score  </th><th>Hcp  </th><th>New Hcp</th></tr>
 	<tr *ngFor="let Score of scores  | orderBy: 'Score':true ">
 
           <td style="text-align:left">{{Score.Player}}</td>
           <td>{{Score.Score}}</td>
           <td>{{Score.Hcp}}</td>
 		  <td>{{Score.RevHcp}}</td>
-		  <td>{{Score.Penalty}}</td>
+
 
 	</tr>
 

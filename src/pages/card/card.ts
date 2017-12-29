@@ -329,7 +329,7 @@ if(nPoints > 36 && (parseFloat(nHcp) > 20.4) && shots > K)
         {
           text: 'Continue',
           handler: () => {
-          this.http.get ('http://golf-rollup.co.uk/society/aAppSubmitScores.php?Club='+ this.society + '&Player='+ this.selectedPlayer +'&Pts='+ this.totPts +'&Hcp='+ this.selectedHcp +'&RevHcp='+ RrevHcp,"")
+          this.http.get ('http://golf-rollup.co.uk/society/appSubScore.php?Club='+ this.society + '&Player='+ this.selectedPlayer +'&Pts='+ this.totPts +'&Hcp='+ this.selectedHcp +'&RevHcp='+ RrevHcp,"")
           .subscribe(res => {
           this.navCtrl.push(ResultsPage, {society: this.society});
                 })

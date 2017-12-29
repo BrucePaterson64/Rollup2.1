@@ -8,7 +8,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content >
     <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
       pullingIcon="arrow-dropdown"
@@ -26,7 +26,7 @@
 
 <ion-item>
 <div ng-init="getLeaders()">
-<table class="leaderboard" style="width:100%" >
+<table class="leaderboard" >
     <tr><th>Name</th><th>Score  </th><th>Hcp  </th><th>Revised Hcp</th></tr>
 
     <tr *ngFor="let Score of scores | orderBy: 'Score':true">
