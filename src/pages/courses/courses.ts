@@ -46,7 +46,5 @@ this.navCtrl.push(CardPage, {
   ionViewDidLoad() {
     this.menuCtrl.enable(true, 'menu1');
     this.menuCtrl.enable(false, 'menu2');
-
 	 }  
-
 }
