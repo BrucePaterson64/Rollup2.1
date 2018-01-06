@@ -4,7 +4,7 @@ import { SocRegistrationPage } from './soc-registration';
 
 @NgModule({
   declarations: [
-    SocRegistrationPage,
+    //SocRegistrationPage,
   ],
   imports: [
     IonicPageModule.forChild(SocRegistrationPage),

@@ -4,7 +4,7 @@ import { EditCoursePage } from './edit-course';
 
 @NgModule({
   declarations: [
-    EditCoursePage,
+    //EditCoursePage,
   ],
   imports: [
     IonicPageModule.forChild(EditCoursePage),

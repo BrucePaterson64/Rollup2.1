@@ -4,7 +4,7 @@ import { Sochome2Page } from './sochome2';
 
 @NgModule({
   declarations: [
-    Sochome2Page,
+    //Sochome2Page,
   ],
   imports: [
     IonicPageModule.forChild(Sochome2Page),

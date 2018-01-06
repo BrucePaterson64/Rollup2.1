@@ -4,7 +4,7 @@ import { AddPlayerPage } from './add-player';
 
 @NgModule({
   declarations: [
-    AddPlayerPage,
+   // AddPlayerPage,
   ],
   imports: [
     IonicPageModule.forChild(AddPlayerPage),

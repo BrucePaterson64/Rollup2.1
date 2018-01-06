@@ -4,7 +4,7 @@ import { EditrollupPage } from './editrollup';
 
 @NgModule({
   declarations: [
-    EditrollupPage,
+    //EditrollupPage,
   ],
   imports: [
     IonicPageModule.forChild(EditrollupPage),

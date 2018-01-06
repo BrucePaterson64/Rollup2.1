@@ -4,7 +4,7 @@ import { SocAddPlayerPage } from './soc-add-player';
 
 @NgModule({
   declarations: [
-    SocAddPlayerPage,
+   // SocAddPlayerPage,
   ],
   imports: [
     IonicPageModule.forChild(SocAddPlayerPage),

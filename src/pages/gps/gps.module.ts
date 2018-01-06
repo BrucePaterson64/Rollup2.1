@@ -4,7 +4,7 @@ import { GpsPage } from './gps';
 
 @NgModule({
   declarations: [
-    GpsPage,
+   // GpsPage,
   ],
   imports: [
     IonicPageModule.forChild(GpsPage),

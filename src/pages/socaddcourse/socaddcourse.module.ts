@@ -4,7 +4,7 @@ import { SocaddcoursePage } from './socaddcourse';
 
 @NgModule({
   declarations: [
-    SocaddcoursePage,
+   // SocaddcoursePage,
   ],
   imports: [
     IonicPageModule.forChild(SocaddcoursePage),

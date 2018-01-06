@@ -4,7 +4,7 @@ import { SocresultsPage } from './socresults';
 
 @NgModule({
   declarations: [
-    SocresultsPage,
+    //SocresultsPage,
   ],
   imports: [
     IonicPageModule.forChild(SocresultsPage),

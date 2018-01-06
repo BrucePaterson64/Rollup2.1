@@ -4,7 +4,7 @@ import { AddclubPage } from './addclub';
 
 @NgModule({
   declarations: [
-    AddclubPage,
+    //AddclubPage,
   ],
   imports: [
     IonicPageModule.forChild(AddclubPage),

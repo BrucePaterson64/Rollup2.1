@@ -4,7 +4,7 @@ import { SocHomePage } from './soc-home';
 
 @NgModule({
   declarations: [
-    SocHomePage,
+   // SocHomePage,
   ],
   imports: [
     IonicPageModule.forChild(SocHomePage),

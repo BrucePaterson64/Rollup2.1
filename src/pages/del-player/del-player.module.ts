@@ -4,7 +4,7 @@ import { DelPlayerPage } from './del-player';
 
 @NgModule({
   declarations: [
-    DelPlayerPage,
+   // DelPlayerPage,
   ],
   imports: [
     IonicPageModule.forChild(DelPlayerPage),

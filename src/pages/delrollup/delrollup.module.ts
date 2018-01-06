@@ -4,7 +4,7 @@ import { DelrollupPage } from './delrollup';
 
 @NgModule({
   declarations: [
-    DelrollupPage,
+    //DelrollupPage,
   ],
   imports: [
     IonicPageModule.forChild(DelrollupPage),

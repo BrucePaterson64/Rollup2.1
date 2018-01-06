@@ -4,7 +4,7 @@ import { SocEditPlayerPage } from './soc-edit-player';
 
 @NgModule({
   declarations: [
-    SocEditPlayerPage,
+   // SocEditPlayerPage,
   ],
   imports: [
     IonicPageModule.forChild(SocEditPlayerPage),

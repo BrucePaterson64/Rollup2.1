@@ -4,7 +4,7 @@ import { LeaderPage } from './leader';
 
 @NgModule({
   declarations: [
-    LeaderPage,
+    //LeaderPage,
   ],
   imports: [
     IonicPageModule.forChild(LeaderPage),

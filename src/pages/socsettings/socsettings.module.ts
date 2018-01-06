@@ -4,7 +4,7 @@ import { SocsettingsPage } from './socsettings';
 
 @NgModule({
   declarations: [
-    SocsettingsPage,
+   // SocsettingsPage,
   ],
   imports: [
     IonicPageModule.forChild(SocsettingsPage),

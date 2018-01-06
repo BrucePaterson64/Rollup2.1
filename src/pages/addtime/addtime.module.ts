@@ -4,7 +4,7 @@ import { AddtimePage } from './addtime';
 
 @NgModule({
   declarations: [
-    AddtimePage,
+    //AddtimePage,
   ],
   imports: [
     IonicPageModule.forChild(AddtimePage),

@@ -4,7 +4,7 @@ import { SocLeaderBoardPage } from './soc-leader-board';
 
 @NgModule({
   declarations: [
-    SocLeaderBoardPage,
+   // SocLeaderBoardPage,
   ],
   imports: [
     IonicPageModule.forChild(SocLeaderBoardPage),

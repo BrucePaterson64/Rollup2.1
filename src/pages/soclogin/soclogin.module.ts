@@ -4,7 +4,7 @@ import { SocloginPage } from './soclogin';
 
 @NgModule({
   declarations: [
-    SocloginPage,
+   // SocloginPage,
   ],
   imports: [
     IonicPageModule.forChild(SocloginPage),

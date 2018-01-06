@@ -4,7 +4,7 @@ import { SocDelPlayerPage } from './soc-del-player';
 
 @NgModule({
   declarations: [
-    SocDelPlayerPage,
+   // SocDelPlayerPage,
   ],
   imports: [
     IonicPageModule.forChild(SocDelPlayerPage),

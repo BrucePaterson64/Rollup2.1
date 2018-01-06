@@ -4,7 +4,7 @@ import { SocCardPage } from './soc-card';
 
 @NgModule({
   declarations: [
-    SocCardPage,
+   //SocCardPage,
   ],
   imports: [
     IonicPageModule.forChild(SocCardPage),

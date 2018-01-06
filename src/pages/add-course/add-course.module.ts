@@ -4,7 +4,7 @@ import { AddCoursePage } from './add-course';
 
 @NgModule({
   declarations: [
-    AddCoursePage,
+    //AddCoursePage,
   ],
   imports: [
     IonicPageModule.forChild(AddCoursePage),

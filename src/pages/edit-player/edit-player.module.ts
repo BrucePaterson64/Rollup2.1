@@ -4,7 +4,7 @@ import { EditPlayerPage } from './edit-player';
 
 @NgModule({
   declarations: [
-    EditPlayerPage,
+// EditPlayerPage,
   ],
   imports: [
     IonicPageModule.forChild(EditPlayerPage),
