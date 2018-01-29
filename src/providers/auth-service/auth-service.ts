@@ -112,6 +112,7 @@ export class AuthService {
          this.http.get('http://golf-rollup.co.uk/appRollup.php?email='+socCredentials.email+'&password='+socCredentials.password, "")
         .map(data => data.json())
         .subscribe(data => {
+       
         this.data = (data[0]);
         this.cl = this.data['club'];
         this.time = this.data['time'];

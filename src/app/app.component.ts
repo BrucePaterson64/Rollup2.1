@@ -46,14 +46,14 @@ export class MyApp {
       { title: 'Courses', component: CoursesPage },
       { title: 'Players', component: PlayersPage },
       { title: 'Results', component: ResultsPage },
-      //{ title: 'GPS Yardage', component: GpsPage },
+      { title: 'GPS Yardage', component: GpsPage },
       { title: 'LogIn', component: LoginPage },
       { title: 'Settings', component: SocsettingsPage }
     ];
   this.pages2 = [
       { title: 'Home', component: HomePage },
       { title: 'Courses', component: SocietiesPage },
-      //{ title: 'GPS Yardage', component: GpsPage },
+      { title: 'GPS Yardage', component: GpsPage },
       { title: 'Players', component: SocplayersPage },
       { title: 'Results', component: SocresultsPage },
       { title: 'Roll Ups', component: RollupPage },

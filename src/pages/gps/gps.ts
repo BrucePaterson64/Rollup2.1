@@ -47,7 +47,7 @@ export class GpsPage {
  let clearLabels = function() 
  {
  console.log("clearing....");
- console.log(labels);
+ console.log(labels.length);
    while (labels.length) {
     let label = labels[labels.length - 1];
     console.log(label);
