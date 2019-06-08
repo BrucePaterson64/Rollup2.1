@@ -54,7 +54,7 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
  doRefresh(refresher) {
     console.log('Begin async operation', refresher);
     	var myYear = moment().year();
-    var myWeek = moment().format('ww');
+    var myWeek = moment().format('WW');
     var week = (myYear +''+ myWeek);
     this.ddate = myWeek;
    this.http.get('http://golf-rollup.co.uk/aAppWeeklyResults.php?Club='+this.Club+'&Day='+this.day+'&TeeTime='+this.time+'&yrwk='+week, "")
@@ -63,7 +63,7 @@ constructor(public navParams: NavParams, public http: Http, public storage: Stor
         this.S = (res);
    
 });
-    
+     
     setTimeout(() => {
       console.log('Async operation has ended');
       refresher.complete();

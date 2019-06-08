@@ -236,7 +236,7 @@ submitResult() {
 
   let y = moment().year();
   let w = moment().week();
-  let yrwk = (y +''+ w);
+  let yrwk = moment().format('YYYYwwionic sefve');
 console.log(yrwk);
 
 var nHcp  = this.selectedHcp;

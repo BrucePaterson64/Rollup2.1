@@ -9,6 +9,14 @@
 
 
 <ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
       <div align="center" class="bar bar-loading bar-assertive top-bar">
       <span >
         <h3>{{society}}'s Results</h3> </span>
@@ -35,13 +43,17 @@ table.weeks tr:nth-child(even) {
             <tr>
                 <th>Name</th>
                 <th>Round 1</th>
-
+                <th>Round 2</th>
+                <th>Round 3</th>
+                <th>Round 4</th>
 
             </tr>
             <tr *ngFor = "let score of S | orderBy: 'Player':false">
                 <td style="text-align:left">{{score.Player}}</td>
                 <td><div [ngClass]="score.Rnd1 === 'yes' ? 'win1': 'win11'">{{score.Rd1}}</div></td>
-
+                <td><div [ngClass]="score.Rnd2 === 'yes' ? 'win2': 'win22'">{{score.Rd2}}</div></td>
+                <td><div [ngClass]="score.Rnd3 === 'yes' ? 'win4': 'win44'">{{score.Rd3}}</div></td>
+                <td><div [ngClass]="score.Rnd4 === 'yes' ? 'win4': 'win44'">{{score.Rd4}}</div></td>
 
             </tr>
         </table>
@@ -53,13 +65,16 @@ table.weeks tr:nth-child(even) {
                 <th>Name</th>
                 <th>Round 1</th>
                 <th>Round 2</th>
-
+                <th>Round 3</th>
+                <th>Round 4</th>
 
             </tr>
             <tr *ngFor="let score of S | orderBy: 'Player':false">
                 <td style="text-align:left">{{score.Player}}</td>
                 <td><div [ngClass]="score.Rnd1 === 'yes' ? 'win1': 'win11'">{{score.Rd1}}</div></td>
                 <td><div [ngClass]="score.Rnd2 === 'yes' ? 'win2': 'win22'">{{score.Rd2}}</div></td>
+                <td><div [ngClass]="score.Rnd3 === 'yes' ? 'win4': 'win44'">{{score.Rd3}}</div></td>
+                <td><div [ngClass]="score.Rnd4 === 'yes' ? 'win4': 'win44'">{{score.Rd4}}</div></td>
 
 
             </tr>
@@ -73,6 +88,7 @@ table.weeks tr:nth-child(even) {
                 <th>Round 1</th>
                 <th>Round 2</th>
                 <th>Round 3</th>
+                <th>Round 4</th>
             </tr>
 
              <tr  *ngFor="let score of S | orderBy: 'Player':false ">
@@ -80,6 +96,9 @@ table.weeks tr:nth-child(even) {
                 <td><div [ngClass]="score.Rnd1 === 'yes' ? 'win1': 'win11'">{{score.Rd1}}</div></td>
                 <td><div [ngClass]="score.Rnd2 === 'yes' ? 'win2': 'win22'">{{score.Rd2}}</div></td>
                 <td><div [ngClass]="score.Rnd3 === 'yes' ? 'win3': 'win33'">{{score.Rd3}}</div></td>
+                <td><div [ngClass]="score.Rnd4 === 'yes' ? 'win4': 'win44'">{{score.Rd4}}</div></td>
+
+
              </tr>
     </table>
           </div>
@@ -98,8 +117,8 @@ table.weeks tr:nth-child(even) {
                 <td style="text-align:left">{{score.Player}}</td>
                 <td><div [ngClass]="score.Rnd1 === 'yes' ? 'win1': 'win11'">{{score.Rd1}}</div></td>
                 <td><div [ngClass]="score.Rnd2 === 'yes' ? 'win2': 'win22'">{{score.Rd2}}</div></td>
-                <td><div [ngClass]="score.Rnd3 === 'yes' ? 'win3': 'win33'">{{score.Rd1}}</div></td>
-                <td><div [ngClass]="score.Rnd4 === 'yes' ? 'win4': 'win44'">{{score.Rd2}}</div></td>
+                <td><div [ngClass]="score.Rnd3 === 'yes' ? 'win3': 'win33'">{{score.Rd3}}</div></td>
+                <td><div [ngClass]="score.Rnd4 === 'yes' ? 'win4': 'win44'">{{score.Rd4}}</div></td>
 
             </tr>
         </table>
@@ -119,9 +138,9 @@ table.weeks tr:nth-child(even) {
                 <td style="text-align:left">{{score.Player}}</td>
                 <td><div [ngClass]="score.Rnd1 === 'yes' ? 'win1': 'win11'">{{score.Rd1}}</div></td>
                 <td><div [ngClass]="score.Rnd2 === 'yes' ? 'win2': 'win22'">{{score.Rd2}}</div></td>
-                <td><div [ngClass]="score.Rnd3 === 'yes' ? 'win3': 'win33'">{{score.Rd1}}</div></td>
-                <td><div [ngClass]="score.Rnd4 === 'yes' ? 'win4': 'win44'">{{score.Rd2}}</div></td>
-                <td><div [ngClass]="score.Rnd5 === 'yes' ? 'win5': 'win55'">{{score.Rd1}}</div></td>
+                <td><div [ngClass]="score.Rnd3 === 'yes' ? 'win3': 'win33'">{{score.Rd3}}</div></td>
+                <td><div [ngClass]="score.Rnd4 === 'yes' ? 'win4': 'win44'">{{score.Rd4}}</div></td>
+                <td><div [ngClass]="score.Rnd5 === 'yes' ? 'win5': 'win55'">{{score.Rd5}}</div></td>
             </tr>
         </table>
           </div>
@@ -142,10 +161,10 @@ table.weeks tr:nth-child(even) {
                 <td style="text-align:left">{{score.Player}}</td>
                <td><div [ngClass]="score.Rnd1 === 'yes' ? 'win1': 'win11'">{{score.Rd1}}</div></td>
                 <td><div [ngClass]="score.Rnd2 === 'yes' ? 'win2': 'win22'">{{score.Rd2}}</div></td>
-                <td><div [ngClass]="score.Rnd3 === 'yes' ? 'win3': 'win33'">{{score.Rd1}}</div></td>
-                <td><div [ngClass]="score.Rnd4 === 'yes' ? 'win4': 'win44'">{{score.Rd2}}</div></td>
-                <td><div [ngClass]="score.Rnd5 === 'yes' ? 'win5': 'win55'">{{score.Rd1}}</div></td>
-                <td><div [ngClass]="score.Rnd6 === 'yes' ? 'win6': 'win66'">{{score.Rd2}}</div></td>
+                <td><div [ngClass]="score.Rnd3 === 'yes' ? 'win3': 'win33'">{{score.Rd3}}</div></td>
+                <td><div [ngClass]="score.Rnd4 === 'yes' ? 'win4': 'win44'">{{score.Rd4}}</div></td>
+                <td><div [ngClass]="score.Rnd5 === 'yes' ? 'win5': 'win55'">{{score.Rd5}}</div></td>
+                <td><div [ngClass]="score.Rnd6 === 'yes' ? 'win6': 'win66'">{{score.Rd6}}</div></td>
 
             </tr>
         </table>

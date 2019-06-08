@@ -26,7 +26,7 @@ export class SocHomePage {
   storage.get('time').then((val) => {
   this.Time = val;
     });
-    
+  
   }
   
   card() {
